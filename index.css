@@ -93,6 +93,15 @@
     display: block;
   }
 
+  .link {
+    font-weight: 700;
+    border-bottom: 1px solid rgb(0 0 0 / 20%);
+    transition: 200ms ease-in-out;
+  }
+  .link:hover {
+    border-bottom: 1px solid rgb(0 0 0 / 80%);
+  }
+
   /* Navbar */
   .nav {
     position: fixed;
@@ -126,11 +135,7 @@
     align-items: center;
   }
 
-  .ul-navbar {
-    margin-right: 40px;
-  }
-
-  .ul-navbar li:nth-child(-n + 2) {
+  .ul-navbar li {
     margin-right: 20px;
   }
 
@@ -166,5 +171,95 @@
   /* About */
 
   /* Projects */
+  .row > h3 {
+    margin-bottom: 0;
+  }
+
+  .project-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .project-links p {
+    margin: 0;
+    color: var(--secondary);
+  }
+
+  .project-links p a {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  @media screen and (min-width: 640px) {
+    .project-links p a {
+      font-size: 16px;
+    }
+  }
+
+  .project-links p:first-child {
+    margin-right: 20px;
+  }
+  
+  .project-links p:last-child svg {
+    transform: rotate(-45deg);
+  }
+
+  .project-img-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background-color: aliceblue;
+    left: 0;
+    padding: 24px 24px 0 24px;
+  }
+  @media screen and (min-width: 640px) {
+    .project-img-wrapper {
+      width: 120%;
+      left: -10%;
+      padding: 60px 60px 0 60px;
+    }
+  }
+  .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-left: 2px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+
+  .features {
+    color: var(--secondary);
+    font-weight: 700;
+  }
+
+  .ul-features {
+    padding-left: 20px;
+  }
+  @media screen and (min-width: 640px) {
+    .ul-features {
+      column-count: 2;
+    }
+  }
+  .ul-features li {
+    margin-bottom: 8px;
+  }
+  .ul-features li::marker {
+    color: var(--secondary-1);
+  }
 
   /* Diversity */
+
+  /* Footer */
+  .footer {
+    padding-bottom: 128px;
+  }
+
+  .footer p {
+    color: var(--secondary);
+    font-size: 14px;
+    margin: 0;
+  }
