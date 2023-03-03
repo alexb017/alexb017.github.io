@@ -81,8 +81,10 @@
     margin: 0 auto;
     padding: 0 20px;
   }
-  
-  .main-content {
+
+  .about,
+  .projects,
+  .diversity {
     padding: 128px 0;
   }
 
@@ -105,6 +107,7 @@
   /* Navbar */
   .nav {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 9;
     padding: 20px 0;
@@ -208,9 +211,9 @@
     position: relative;
     width: 100%;
     border-radius: 8px;
-    background-color: aliceblue;
     left: 0;
     padding: 24px 24px 0 24px;
+    margin-bottom: 48px;
   }
   @media screen and (min-width: 640px) {
     .project-img-wrapper {
@@ -219,6 +222,19 @@
       padding: 60px 60px 0 60px;
     }
   }
+
+  .project-todo {
+    background-color: aliceblue;
+  }
+
+  .project-grocery {
+    background-color: antiquewhite;
+  }
+
+  .project-note {
+    background-color: aquamarine;
+  }
+
   .project-img {
     display: block;
     width: 100%;
