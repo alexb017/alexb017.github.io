@@ -12,6 +12,7 @@
   --secondary-3: #dbdbdb;
   --border-color: rgb(0 0 0 / 20%);
   --border-color-hover: rgb(0 0 0 / 80%);
+  --box-background: #fff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
@@ -78,6 +79,7 @@ body.dark {
   --secondary-3: #444;
   --border-color: rgb(255 255 255 / 35%);
   --border-color-hover: rgb(255 255 255 / 80%);
+  --box-background: #1a1a1a;
 }
 
 .container {
@@ -179,9 +181,9 @@ body.dark {
 .contact-icon {
   display: flex;
   padding: 8px;
-  background-color: var(--primary-2);
-  color: var(--white);
-  box-shadow: 0 10px 40px rgb(251 90 80 / 50%);
+  background-color: var(--box-background);
+  color: var(--primary);
+  box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
   border-radius: 50%;
   margin-right: 16px;
 }
