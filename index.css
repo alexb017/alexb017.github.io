@@ -79,6 +79,7 @@ body.dark {
   --white: #000;
   --black: #fff;
   --secondary-1: #1a1a1a;
+  --secondary-2: #999;
   --secondary-3: #444;
   --border-color: rgb(255 255 255 / 35%);
   --border-color-hover: rgb(255 255 255 / 80%);
@@ -102,6 +103,15 @@ body.dark {
 
 .link:hover {
   border-bottom: 1px solid var(--border-color-hover);
+}
+
+.link-live {
+  color: var(--secondary-2);
+  text-decoration: underline;
+}
+
+.projects-ul p svg {
+  color: var(--secondary-2);
 }
 
 .navbar {
