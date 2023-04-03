@@ -57,7 +57,7 @@ button {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.4;
   color: var(--black);
 }
@@ -84,6 +84,15 @@ p svg {
   display: inline-block;
   vertical-align: text-bottom;
   color: var(--black);
+}
+
+code {
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: var(--secondary-1);
+  color: var(--secondary-2);
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 14px;
 }
 
 body.dark {
@@ -165,7 +174,7 @@ body.dark {
 }
 
 .projects-ul {
-  padding-left: 16px;
+  padding-left: 32px;
 }
 
 .projects-ul li p a:first-child {
@@ -177,7 +186,7 @@ body.dark {
 }
 
 .projects-ul li::marker {
-  color: var(--secondary-3);
+  color: var(--secondary-5);
 }
 
 .fun p:not(:last-child) {

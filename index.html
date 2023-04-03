@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>alex personal website</title>
     <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <div class="main">
@@ -51,6 +52,7 @@
             interested in front-end apps. I enjoy programming in JavaScript,
             React, Next.js, and I try to learn about many other awesome stuff.
           </p>
+
           <h3 class="title">Projects</h3>
           <ul class="projects-ul">
             <li>
@@ -61,23 +63,13 @@
                   target="_blank"
                   >ToDo React App</a
                 >
-                - I've made a simple to do app in react.
+                - The app features a list of tasks, where users can add, edit, and delete tasks. <br />
                 <a
                   href="https://todo-react-app-alexb017.vercel.app"
-                  class="link"
+                  class="link-live"
                   target="_blank"
-                  >View live app</a
+                  ><code>https://todo-react-app-alexb017.vercel.app</code></a
                 >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M224 104a8 8 0 0 1-16 0V59.32l-66.33 66.34a8 8 0 0 1-11.32-11.32L196.68 48H152a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-40 24a8 8 0 0 0-8 8v72H48V80h72a8 8 0 0 0 0-16H48a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-72a8 8 0 0 0-8-8Z"
-                  />
-                </svg>
               </p>
             </li>
             <li>
@@ -90,23 +82,13 @@
                 >
                 - I made a simple grocery store app using react and firebase
                 realtime database. The app allow users to view the products and
-                there details, add/delete from cart and stored the data.
+                there details, add/delete from cart and stored the data. <br />
                 <a
                   href="https://grocery-store-alexb017.vercel.app"
                   class="link"
                   target="_blank"
-                  >View live app</a
+                  ><code>https://grocery-store-alexb017.vercel.app</code></a
                 >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M224 104a8 8 0 0 1-16 0V59.32l-66.33 66.34a8 8 0 0 1-11.32-11.32L196.68 48H152a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-40 24a8 8 0 0 0-8 8v72H48V80h72a8 8 0 0 0 0-16H48a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-72a8 8 0 0 0-8-8Z"
-                  />
-                </svg>
               </p>
             </li>
             <li>
@@ -118,22 +100,14 @@
                   >Note Taking App</a
                 >
                 - Build a note-taking app with React, Next.js and Firebase.
+                <br />
+                <pre>
                 <a
                   href="https://note-taking-app-alexb017.vercel.app"
                   class="link"
                   target="_blank"
-                  >View live app</a
-                >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M224 104a8 8 0 0 1-16 0V59.32l-66.33 66.34a8 8 0 0 1-11.32-11.32L196.68 48H152a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-40 24a8 8 0 0 0-8 8v72H48V80h72a8 8 0 0 0 0-16H48a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-72a8 8 0 0 0-8-8Z"
-                  />
-                </svg>
+                  ><code>https://note-taking-app-alexb017.vercel.app</code></a
+                ></pre>
               </p>
             </li>
             <li>
@@ -147,7 +121,7 @@
                 - Simple react static page using react-spring.
               </p>
             </li>
-            <li>
+            <!-- <li>
               <p>
                 <a
                   href="https://github.com/alexb017/notes-app"
@@ -159,8 +133,9 @@
                 update and remove notes. With dark mode. Also you can style each
                 note by size, weight, italic and color.
               </p>
-            </li>
+            </li> -->
           </ul>
+
           <div class="fun">
             <h3 class="title">Just for fun</h3>
             <p>
@@ -220,23 +195,5 @@
         </div>
       </div>
     </div>
-    <script>
-      const btnAppearance = document.querySelector('.btn-appearance');
-      const theme = localStorage.getItem('theme');
-
-      if (theme) {
-        document.body.classList.add(theme);
-      }
-
-      btnAppearance.addEventListener('click', () => {
-        if (document.body.classList.contains('dark')) {
-          document.body.classList.remove('dark');
-          localStorage.setItem('theme', '');
-        } else {
-          document.body.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-      });
-    </script>
   </body>
 </html>
