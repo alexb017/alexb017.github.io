@@ -27,7 +27,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--body-color);
+  color: var(--black);
   font-weight: 400;
   background-color: var(--white);
 }
@@ -64,8 +64,6 @@ h1 {
 
 h3 {
   font-size: 21px;
-  color: var(--secondary-2);
-  opacity: .7;
   font-weight: 600;
 }
 
@@ -174,7 +172,7 @@ body.dark {
 }
 
 .projects-ul {
-  padding-left: 32px;
+  padding-left: 16px;
 }
 
 .projects-ul li p a:first-child {
