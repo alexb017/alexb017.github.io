@@ -476,8 +476,7 @@ body.dark {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: var(--modal-background);
-    backdrop-filter: blur(20px);
+    background-color: var(--white);
     display: none;
 }
 
