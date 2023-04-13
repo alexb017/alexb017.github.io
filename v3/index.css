@@ -7,7 +7,8 @@
     --secondary: #666;
     --secondary-light: #f5f5f5;
     --secondary-light-2: #eee;
-    --box-shadow: rgb(0 0 0 / 15%);
+    --box-shadow: rgb(0 0 0 / 10%);
+    --box-shadow-20: rgb(0 0 0 / 20%);
     --icon-shadow: rgb(0 0 0 / 35%);
     --icon-background-color: #fff;
     --box-background-color: rgb(23 105 255 / 5%);
@@ -100,7 +101,7 @@ body.dark {
 
 .container {
     position: relative;
-    max-width: 540px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -127,7 +128,7 @@ body.dark {
 
 .box {
     position: relative;
-    box-shadow: 0px 10px 70px var(--box-shadow);
+    box-shadow: 0px 70px 40px -50px var(--box-shadow-20), 0px 3px 20px var(--box-shadow);
     padding: 20px;
     background-color: var(--box-background);
     border-radius: 20px;
@@ -232,19 +233,18 @@ body.dark {
 /* projects */
 @media screen and (min-width: 820px) {
     .projects-content {
+        margin-right: 8.33%;
         margin-left: 16.66%;
     }
 }
 
 .projects-icon {
-    display: none;
     position: absolute;
     top: -40px;
     right: 40px;
     opacity: .5;
     width: 80px;
     height: 80px;
-    filter: grayscale(1);
 }
 
 .projects .box>p {
@@ -435,18 +435,6 @@ body.dark {
     text-align: center;
 }
 
-.contact-box .box .link:hover {
-    text-decoration: underline;
-}
-
-.contact-box .box .link span:first-child {
-    color: var(--secondary);
-}
-
-.contact-box .box .link span:last-child {
-    color: var(--blue-color);
-}
-
 .contact-icon {
     position: absolute;
     top: -30px;
@@ -459,7 +447,7 @@ body.dark {
     height: 60px;
     background-color: var(--icon-background-color);
     color: var(--blue-color);
-    box-shadow: 0 10px 70px var(--icon-shadow);
+    box-shadow: 0px 30px 20px -10px var(--box-shadow-20), 0px 0px 20px var(--box-shadow);
     border-radius: 50%;
 }
 
@@ -477,6 +465,7 @@ body.dark {
     bottom: 0;
     left: 0;
     background-color: var(--white);
+    overflow: auto;
     display: none;
 }
 
