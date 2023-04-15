@@ -115,7 +115,6 @@ body.dark {
     transition: 200ms ease-in-out;
     text-decoration: underline;
     color: var(--blue-color);
-    font-weight: 700;
 }
 
 .link span {
@@ -233,12 +232,12 @@ body.dark {
 /* projects */
 @media screen and (min-width: 820px) {
     .projects-content {
-        margin-right: 8.33%;
         margin-left: 16.66%;
     }
 }
 
 .projects-icon {
+    display: none;
     position: absolute;
     top: -40px;
     right: 40px;
@@ -254,7 +253,6 @@ body.dark {
 .projects-ul {
     column-count: 2;
     padding-left: 20px;
-    list-style-type: decimal;
 }
 
 .projects-ul li:not(:last-child) {
@@ -266,9 +264,8 @@ body.dark {
 }
 
 .projects-ul .tab {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    font-weight: 700;
 }
 
 .projects-ul .tab svg {
@@ -281,16 +278,16 @@ body.dark {
     opacity: 1;
 }
 
-.projects-subtext {
+/* .projects-subtext {
     position: absolute;
     bottom: -32px;
     left: 0;
     width: 100%;
-}
+} */
 
 .projects-subtext p {
     font-size: 14px;
-    padding-left: 20px;
+    margin-top: 16px;
 }
 
 .btn-github {
@@ -489,7 +486,7 @@ body.dark {
     cursor: pointer;
     padding: 8px;
     border-radius: 50%;
-    background-color: var(--button-background);
+    background-color: var(--box-background-color);
 }
 
 .modal-content-info p {
