@@ -1,5 +1,4 @@
 const btnAppearance = document.querySelector('.btn-appearance');
-const list = document.querySelector("#repos-list");
 const theme = localStorage.getItem('theme');
 
 if (theme) {
@@ -13,6 +12,46 @@ btnAppearance.addEventListener('click', () => {
     } else {
         document.body.classList.add('dark');
         localStorage.setItem('theme', 'dark');
+    }
+});
+
+const tabs = document.querySelectorAll('.tab');
+const btnsCloseModal = document.querySelectorAll('.btn-close-modal');
+const modals = document.querySelectorAll('.modal');
+
+tabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+        const selector = e.currentTarget.dataset.content;
+        document.querySelector(selector).classList.add('show');
+
+        if (document.querySelector(selector).classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === document.querySelector(selector)) {
+                document.querySelector(selector).classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+});
+
+btnsCloseModal.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        document.querySelector('.modal.show').classList.remove('show');
+        document.body.style.overflow = '';
+    });
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.keyCode === 27) {
+        modals.forEach((modal) => {
+            if (modal.classList.contains('show')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
     }
 });
 
