@@ -2,7 +2,8 @@
     --color-white: #fff;
     --color-black: #121213;
     --color-green: #ccff90;
-    --color-blue: #cbf0f8;
+    --color-light-blue: #cbf0f8;
+    --color-blue: #1769ff;
     --color-gray: #e8eaed;
     --color-gray-opacity: rgb(18 18 19 / 60%);
     --box-shadow: 0 40px 100px rgb(0 0 0 / 10%);
@@ -66,6 +67,7 @@ button {
     font-weight: 700;
     text-decoration: underline;
     transition: 200ms ease-in-out;
+    color: var(--color-blue);
 }
 
 .link:hover {
@@ -214,8 +216,8 @@ button {
 
 @media screen and (min-width: 820px) {
     .projects-row {
-        margin-right: 25%;
-        margin-left: 16.66%;
+        margin-right: 33.33%;
+        margin-left: 8.33%;
     }
 }
 
@@ -290,7 +292,7 @@ button {
 }
 
 .contact-row .box {
-    background-color: var(--color-blue);
+    background-color: var(--color-light-blue);
 }
 
 .contact-icon {
