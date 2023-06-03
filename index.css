@@ -78,13 +78,21 @@ button {
     color: var(--color-black);
 }
 
+.icon-color {
+    position: absolute;
+    top: -32px;
+    color: var(--color-black);
+    width: 48px;
+    height: 48px;
+}
+
 /* Intro */
 .intro-row {
     margin-left: 8.33%;
 }
 
 .intro {
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .intro-nav {
@@ -122,6 +130,7 @@ button {
 .intro-info p:first-child {
     font-weight: 700;
     font-size: 20px;
+    line-height: 1.2;
 }
 
 .intro-info p:last-child {
@@ -129,8 +138,12 @@ button {
 }
 
 /* About Text */
+.about {
+    margin-top: 40px;
+}
+
 .about-row {
-    margin-left: 25%;
+    margin-left: 16.66%;
 }
 
 @media screen and (min-width: 820px) {
@@ -144,19 +157,13 @@ button {
 }
 
 .about-icon {
-    position: absolute;
-    top: -32px;
     right: 80px;
-    font-size: 32px;
 }
 
 /* Music */
-/* .music {
-    margin-top: 64px;
-} */
 .music-row {
-    margin-right: 16.66%;
-    margin-left: 8.33%;
+    margin-right: 0;
+    margin-left: 16.66%;
 }
 
 @media screen and (min-width: 820px) {
@@ -171,10 +178,7 @@ button {
 }
 
 .music-icon {
-    position: absolute;
-    top: -32px;
     right: 80px;
-    font-size: 32px;
 }
 
 /* Fun */
@@ -192,17 +196,7 @@ button {
 }
 
 .fun-icon {
-    position: absolute;
-    top: -32px;
-    right: -20px;
-    font-size: 32px;
-}
-
-@media screen and (min-width: 820px) {
-    .fun-icon {
-        right: 0;
-        left: 80px;
-    }
+    left: 80px;
 }
 
 /* Projects */
@@ -248,10 +242,7 @@ button {
 }
 
 .projects-icon {
-    position: absolute;
-    top: -32px;
     left: 20px;
-    font-size: 32px;
 }
 
 @media screen and (min-width: 820px) {
@@ -296,10 +287,7 @@ button {
 }
 
 .contact-icon {
-    position: absolute;
-    top: -32px;
     right: 80px;
-    font-size: 32px;
 }
 
 /* Footer */
