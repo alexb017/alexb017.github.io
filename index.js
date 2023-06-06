@@ -1,3 +1,17 @@
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+        document.querySelector('.tab.active').classList.remove('active');
+
+        e.currentTarget.classList.add('active');
+
+        document.querySelector('.tab-content.show').classList.remove('show');
+
+        const selector = e.currentTarget.dataset.content;
+        document.querySelector(selector).classList.add('show');
+    });
+});
+
 const btnAppearance = document.querySelector('.btn-appearance');
 const theme = localStorage.getItem('theme017');
 
