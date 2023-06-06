@@ -13,18 +13,27 @@ tabs.forEach((tab) => {
 });
 
 const btnAppearance = document.querySelector('.btn-appearance');
-const theme = localStorage.getItem('theme017');
+const lightIcon = document.querySelector('.light-icon');
+const darkIcon = document.querySelector('.dark-icon');
+
+const theme = localStorage.getItem('theme');
 
 if (theme) {
     document.body.classList.add(theme);
+    lightIcon.classList.remove('show');
+    darkIcon.classList.add('show');
 }
 
 btnAppearance.addEventListener('click', () => {
     if (document.body.classList.contains('dark')) {
         document.body.classList.remove('dark');
-        localStorage.setItem('theme017', '')
+        darkIcon.classList.remove('show');
+        lightIcon.classList.add('show');
+        localStorage.setItem('theme', '')
     } else {
         document.body.classList.add('dark');
-        localStorage.setItem('theme017', 'dark');
+        lightIcon.classList.remove('show');
+        darkIcon.classList.add('show');
+        localStorage.setItem('theme', 'dark');
     }
 });
