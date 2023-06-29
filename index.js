@@ -25,9 +25,9 @@ btnDarkMode.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const itemsAbout = document.querySelectorAll('.slidein');
+    const items = document.querySelectorAll('.slidein');
 
-    itemsAbout.forEach((item, index) => {
+    items.forEach((item, index) => {
         setTimeout(() => {
             item.classList.add('fadein');
         }, index * 100);
