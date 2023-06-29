@@ -23,13 +23,3 @@ btnDarkMode.addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     }
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.slidein');
-
-    items.forEach((item, index) => {
-        setTimeout(() => {
-            item.classList.add('fadein');
-        }, index * 100);
-    });
-});

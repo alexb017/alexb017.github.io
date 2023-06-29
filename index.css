@@ -60,29 +60,55 @@ button {
 }
 
 h1 {
-    font-size: 67px;
+    font-size: 38px;
     line-height: 1.2;
     font-weight: 500;
     letter-spacing: -2px;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 67px;
+    }
 }
 
 .nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 40px;
 }
 
 @media screen and (min-width: 1024px) {
     .nav-content {
-        padding: 20px 80px;
+        padding: 40px 80px;
     }
 }
 
 .nav-title {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     font-size: 24px;
+    line-height: 1;
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-title {
+        align-items: center;
+        flex-direction: row;
+    }
 }
 
 .nav-title span {
@@ -128,31 +154,29 @@ h1 {
     display: flex;
 }
 
-.content {
-    display: grid;
-    grid-template-columns: 1024px;
-    padding: 20px;
+.container {
+    padding: 40px;
 }
 
 @media screen and (min-width: 1024px) {
-    .content {
-        grid-template-columns: 1024px 1fr;
-        column-gap: 80px;
-        padding: 80px 0 0 80px;
+    .container {
+        padding: 80px;
     }
 }
 
-.left {
+.content {
     display: flex;
     flex-direction: column;
     row-gap: 80px;
 }
 
-/* .right {
-    background-color: var(--color-violet-100);
-} */
+@media screen and (min-width: 1280px) {
+    .content {
+        max-width: 1024px;
+    }
+}
 
-.about h1 {
+.about h1:not(:last-child) {
     margin-bottom: 40px;
 }
 
@@ -163,9 +187,25 @@ h1 {
 
 .emojipedia {
     position: absolute;
-    top: 10px;
-    right: -20px;
-    font-size: 20px;
+    top: 0;
+    right: -10px;
+    font-size: 14px;
+    padding: 4px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+    .emojipedia {
+        top: 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .emojipedia {
+        top: 10px;
+        font-size: 20px;
+    }
 }
 
 .text-line {
@@ -176,17 +216,28 @@ h1 {
 .text-line::before {
     content: '';
     position: absolute;
-    top: 22px;
+    top: 12px;
     width: 100%;
-    height: 50px;
+    height: 25px;
     z-index: -1;
     display: inline-block;
     background-color: var(--color-violet-200);
     border-radius: 100px;
-    line-height: 0.8;
-    box-shadow: -8px 0 0 var(--color-violet-200), 8px 0 0 var(--color-violet-200);
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    box-shadow: -4px 0 0 var(--color-violet-200), 4px 0 0 var(--color-violet-200);
+}
+
+@media screen and (min-width: 768px) {
+    .text-line::before {
+        top: 15px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .text-line::before {
+        top: 22px;
+        height: 50px;
+    }
 }
 
 .projects p {
@@ -233,7 +284,19 @@ ul li::marker {
 }
 
 .contact h1 {
-    font-size: 50px;
+    font-size: 22px;
+}
+
+@media screen and (min-width: 768px) {
+    .contact h1 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .contact h1 {
+        font-size: 50px;
+    }
 }
 
 .footer {
@@ -249,8 +312,56 @@ ul li::marker {
     opacity: 0;
 }
 
-.fadein {
-    animation: slidein 1s ease-in forwards;
+.about h1:nth-child(1) {
+    animation: slidein 1s ease-in 100ms forwards;
+}
+
+.about h1:nth-child(2) {
+    animation: slidein 1s ease-in 200ms forwards;
+}
+
+.about h1:nth-child(3) {
+    animation: slidein 1s ease-in 300ms forwards;
+}
+
+.projects p:nth-child(1) {
+    animation: slidein 1s ease-in 400ms forwards;
+}
+
+.projects ul li:nth-child(1) {
+    animation: slidein 1s ease-in 500ms forwards;
+}
+
+.projects ul li:nth-child(2) {
+    animation: slidein 1s ease-in 600ms forwards;
+}
+
+.projects ul li:nth-child(3) {
+    animation: slidein 1s ease-in 700ms forwards;
+}
+
+.projects ul li:nth-child(4) {
+    animation: slidein 1s ease-in 800ms forwards;
+}
+
+.projects a:nth-child(3) {
+    animation: slidein 1s ease-in 900ms forwards;
+}
+
+.contact p:nth-child(1) {
+    animation: slidein 1s ease-in 1000ms forwards;
+}
+
+.contact h1:nth-child(2) {
+    animation: slidein 1s ease-in 1100ms forwards;
+}
+
+.contact h1:nth-child(3) {
+    animation: slidein 1s ease-in 1200ms forwards;
+}
+
+.footer p:nth-child(1) {
+    animation: slidein 1s ease-in 1300ms forwards;
 }
 
 @keyframes slidein {
