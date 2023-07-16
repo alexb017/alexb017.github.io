@@ -1,3 +1,81 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000000;
+  --color-gray: #696969;
+  --color-lightgray: #d3d3d3;
+}
+
+body.dark {
+  --color-white: #111111;
+  --color-black: #ffffff;
+  --color-lightgray: #696969;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-gray);
+  font-weight: 400;
+  background-color: var(--color-white);
+}
+
+* {
   margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+svg {
+  fill: currentColor;
+}
+
+button {
+  all: unset;
+}
+
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+  outline: unset;
+}
+
+a:active,
+button:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+}
+
+b,
+strong {
+  font-weight: 600;
 }
