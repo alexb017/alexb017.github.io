@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Home from "./Home";
+import About from "./About";
 import "./App.css";
+import Projects from "./Projects";
+import Fun from "./Fun";
+import Navbar from "./Navbar";
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(
@@ -24,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <main className="main">
-        <button
+        {/* <button
           type="button"
           className="btn-dark-mode"
           onClick={handleThemeClick}
@@ -41,10 +44,13 @@ function App() {
             />
           </svg>
           Dark Mode
-        </button>
+        </button> */}
+        {/* <Navbar /> */}
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<About />}></Route>
+            <Route path="/projects" element={<Projects />}></Route>
+            <Route path="/fun" element={<Fun />}></Route>
           </Routes>
         </div>
       </main>
