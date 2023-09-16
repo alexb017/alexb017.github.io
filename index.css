@@ -5,14 +5,17 @@
   --color-black: #0a0a0a;
   --color-gray: #737373;
   --color-light: #d4d4d4;
+  --color-lighter: #f0f0f0;
   --color-orange: #ffa16c;
+  --color-green: #7ab51d;
+  --color-blue: #5a96d3;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--color-black);
+  color: var(--color-gray);
   font-weight: 400;
 }
 
@@ -47,11 +50,13 @@ strong {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--color-black);
 }
 
 .container {
-  max-width: 640px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -60,45 +65,24 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-top: 64px;
+  margin-top: 20px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .content {
     flex-direction: row;
   }
 }
 
 .avatar {
-  position: relative;
-  width: 100px;
-  height: 100px;
-}
-
-.avatar-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: inherit;
-  height: inherit;
-  border-radius: 20px;
+  width: 106px;
+  height: 106px;
 }
 
 .avatar img {
-  width: 120px;
-  height: auto;
-}
-
-.avatar .logo {
-  display: none;
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .right,
@@ -109,33 +93,22 @@ h1 {
   align-items: flex-start;
 }
 
-.right {
-  gap: 40px;
-}
-
-.top p,
-.top a {
-  font-size: 18px;
-}
-
-.top p {
-  color: var(--color-gray);
-}
-
-.top a {
-  margin-top: 8px;
-}
-
+.right,
 .bottom {
-  gap: 16px;
+  gap: 20px;
+}
+
+.btn-dark-mode {
+  color: var(--color-green);
+  cursor: pointer;
 }
 
 .link-music {
   display: inline-block;
   padding: 10px 16px;
   line-height: 1;
-  color: var(--color-white);
-  background-color: var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-lighter);
   border-radius: 100px;
   transition: transform 200ms ease-out;
 }
@@ -149,4 +122,16 @@ h1 {
 }
 .link:hover {
   border-color: var(--color-black);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li:nth-child(2) {
+  margin: 8px 0;
+}
+
+.copyright {
+  font-size: 14px;
 }
