@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-white: #fff;
+  --color-black: #0a0a0a;
+  --color-gray: #737373;
+  --color-light: #d4d4d4;
+  --color-orange: #ffa16c;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+svg {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+button {
+  all: unset;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 64px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+.avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+}
+
+.avatar img {
+  width: 120px;
+  height: auto;
+}
+
+.avatar .logo {
+  display: none;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.right,
+.top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right {
+  gap: 40px;
+}
+
+.top p,
+.top a {
+  font-size: 18px;
+}
+
+.top p {
+  color: var(--color-gray);
+}
+
+.top a {
+  margin-top: 8px;
+}
+
+.bottom {
+  gap: 16px;
+}
+
+.link-music {
+  display: inline-block;
+  padding: 10px 16px;
+  line-height: 1;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-radius: 100px;
+  transition: transform 200ms ease-out;
+}
+.link-music:hover {
+  transform: scale(1.02);
+}
+
+.link {
+  border-bottom: 1px solid var(--color-light);
+  transition: border 400ms ease-out;
+}
+.link:hover {
+  border-color: var(--color-black);
+}
