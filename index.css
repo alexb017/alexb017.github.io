@@ -2,13 +2,21 @@
 
 :root {
   --color-white: #fff;
-  --color-black: #0a0a0a;
-  --color-gray: #737373;
-  --color-light: #d4d4d4;
+  --color-black: #000;
+  --color-gray: #555;
+  --color-light: #ccc;
   --color-lighter: #f0f0f0;
-  --color-orange: #ffa16c;
-  --color-green: #7ab51d;
-  --color-blue: #5a96d3;
+  --color-green: #1ed760;
+  --color-lightgreen: #f0fdf4;
+}
+
+body.dark {
+  --color-white: #111;
+  --color-black: #fff;
+  --color-gray: #999;
+  --color-light: #555;
+  --color-lighter: #333;
+  --color-lightgreen: #052e16;
 }
 
 body {
@@ -17,6 +25,7 @@ body {
   line-height: 1.5;
   color: var(--color-gray);
   font-weight: 400;
+  background-color: var(--color-white);
 }
 
 * {
@@ -83,6 +92,19 @@ h1 {
   display: block;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  animation: slideImg 1s ease-in 200ms forwards;
+}
+
+@keyframes slideImg {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .right,
@@ -99,26 +121,37 @@ h1 {
 }
 
 .btn-dark-mode {
-  color: var(--color-green);
   cursor: pointer;
+  font-style: italic;
+  color: var(--color-gray);
+  transition: color 200ms ease-out;
+}
+.btn-dark-mode:hover {
+  color: var(--color-black);
 }
 
 .link-music {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 16px;
   line-height: 1;
-  color: var(--color-black);
-  background-color: var(--color-lighter);
-  border-radius: 100px;
-  transition: transform 200ms ease-out;
+  color: var(--color-gray);
+  border: 1px solid var(--color-lighter);
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 200ms ease-out;
 }
 .link-music:hover {
   transform: scale(1.02);
+  color: var(--color-green);
+  background-color: var(--color-lightgreen);
+  opacity: 1;
 }
 
 .link {
   border-bottom: 1px solid var(--color-light);
-  transition: border 400ms ease-out;
+  transition: border 200ms ease-out;
 }
 .link:hover {
   border-color: var(--color-black);
@@ -134,4 +167,76 @@ ul li:nth-child(2) {
 
 .copyright {
   font-size: 14px;
+}
+
+.slideIn {
+  opacity: 0;
+}
+
+.top h1:nth-child(1) {
+  animation: slideIn 1s ease-in 100ms forwards;
+}
+
+.top p:nth-child(2) {
+  animation: slideIn 1s ease-in 200ms forwards;
+}
+
+.top a:nth-child(3) {
+  animation: slideIn 1s ease-in 300ms forwards;
+}
+
+.top button:nth-child(4) {
+  animation: slideIn 1s ease-in 400ms forwards;
+}
+
+.bottom p:nth-child(1) {
+  animation: slideIn 1s ease-in 500ms forwards;
+}
+
+.bottom p:nth-child(2) {
+  animation: slideIn 1s ease-in 600ms forwards;
+}
+
+.bottom a:nth-child(3) {
+  animation: slideIn 1s ease-in 700ms forwards;
+}
+
+.bottom p:nth-child(4) {
+  animation: slideIn 1s ease-in 800ms forwards;
+}
+
+.bottom ul:nth-child(5) li:nth-child(1) {
+  animation: slideIn 1s ease-in 900ms forwards;
+}
+
+.bottom ul:nth-child(5) li:nth-child(2) {
+  animation: slideIn 1s ease-in 1000ms forwards;
+}
+
+.bottom ul:nth-child(5) li:nth-child(3) {
+  animation: slideIn 1s ease-in 1100ms forwards;
+}
+
+.bottom p:nth-child(6) {
+  animation: slideIn 1s ease-in 1200ms forwards;
+}
+
+.bottom p:nth-child(7) {
+  animation: slideIn 1s ease-in 1300ms forwards;
+}
+
+.footer p:nth-child(1) {
+  animation: slideIn 1s ease-in 1400ms forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
