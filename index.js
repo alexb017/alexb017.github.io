@@ -1,19 +1,15 @@
-const btnDark = document.querySelector('.btn-dark-mode');
+const copyEmail = document.querySelector('.email-link');
 
-const theme = localStorage.getItem('theme');
-if (theme) {
-  document.body.classList.add(theme);
-  btnDark.innerHTML = 'Use light theme';
-}
+copyEmail.addEventListener('click', (event) => {
+  // Get the value of the data attribute
+  const copyData = event.currentTarget.dataset.email;
 
-btnDark.addEventListener('click', () => {
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    btnDark.innerHTML = 'Use dark theme';
-    localStorage.setItem('theme', '');
-  } else {
-    document.body.classList.add('dark');
-    btnDark.innerHTML = 'Use light theme';
-    localStorage.setItem('theme', 'dark');
-  }
+  // Copy the value of the data attribute to the clipboard
+  navigator.clipboard.writeText(copyData);
+
+  document.querySelector('.copy-email').style.opacity = '1';
+
+  setTimeout(() => {
+    document.querySelector('.copy-email').style.opacity = '0';
+  }, 1000);
 });
