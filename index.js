@@ -1,15 +1,17 @@
-const copyEmail = document.querySelector('.email-link');
+const copyEmail = document.querySelectorAll('.copy-email-link');
 
-copyEmail.addEventListener('click', (event) => {
-  // Get the value of the data attribute
-  const copyData = event.currentTarget.dataset.email;
+copyEmail.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    // Get the value of the data attribute
+    const copyData = event.currentTarget.dataset.email;
 
-  // Copy the value of the data attribute to the clipboard
-  navigator.clipboard.writeText(copyData);
+    // Copy the value of the data attribute to the clipboard
+    navigator.clipboard.writeText(copyData);
 
-  document.querySelector('.copy-email').style.opacity = '1';
+    document.querySelector('.copy-email').style.opacity = '1';
 
-  setTimeout(() => {
-    document.querySelector('.copy-email').style.opacity = '0';
-  }, 1000);
+    setTimeout(() => {
+      document.querySelector('.copy-email').style.opacity = '0';
+    }, 1000);
+  });
 });

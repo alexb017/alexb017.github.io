@@ -4,29 +4,21 @@
   --color-white: #fff;
   --color-black: #000;
   --color-green: #1ed760;
-  --color-zinc-50: #fafafa;
-  --color-zinc-100: #f4f4f5;
-  --color-zinc-200: #e4e4e7;
-  --color-zinc-300: #d4d4d8;
-  --color-zinc-400: #a1a1aa;
-  --color-zinc-500: #71717a;
-  --color-zinc-600: #52525b;
-  --color-zinc-700: #3f3f46;
-  --color-zinc-800: #27272a;
-  --color-zinc-900: #18181b;
-  --color-zinc-950: #09090b;
-  --color-green-50: #f0fdf4;
-  --color-green-opacity-10: rgb(30 215 96 / 5%);
-  --color-green-opacity-80: rgb(30 215 96 / 80%);
+  --color-lightgray: #f5f5f5;
+  --color-gray: #999;
+  --color-darkgray: #666;
+  --color-gray-opacity-10: rgb(0 0 0 / 0.1);
+  --color-green-opacity-10: rgb(30 215 96 / 0.05);
+  --color-green-opacity-80: rgb(30 215 96 / 0.8);
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  color: var(--color-zinc-950);
+  color: var(--color-black);
   font-weight: 400;
-  background-color: var(--color-zinc-50);
+  background-color: var(--color-white);
 }
 
 * {
@@ -41,7 +33,7 @@ body {
 }
 
 a {
-  color: var(--color-zinc-950);
+  color: var(--color-black);
   text-decoration: none;
 }
 
@@ -100,7 +92,7 @@ h3 {
   font-weight: 600;
 }
 h3 span {
-  color: var(--color-zinc-400);
+  color: var(--color-gray);
   font-weight: 400;
 }
 
@@ -108,7 +100,7 @@ h3 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-zinc-300);
+  border: 1px solid var(--color-gray-opacity-10);
   border-radius: 8px;
   width: 28px;
   height: 28px;
@@ -129,38 +121,9 @@ h3 span {
   font-weight: 600;
 }
 .intro p {
-  padding: 0 40px;
   font-weight: 400;
-  color: var(--color-zinc-500);
+  color: var(--color-darkgray);
 }
-
-/* Nav */
-.nav {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}
-.tab {
-  display: flex;
-  color: var(--color-zinc-400);
-  transition: color 200ms ease-out;
-}
-.tab:hover {
-  color: var(--color-zinc-500);
-}
-.tab.active {
-  color: var(--color-zinc-950);
-  border-bottom: 1px solid var(--color-zinc-300);
-}
-/* .tab-content {
-  display: none;
-}
-
-.tab-content.show {
-  display: block;
-} */
-
-/* About */
 
 /* Spotify */
 .spotify-link {
@@ -171,7 +134,7 @@ h3 span {
   margin-right: 25%;
   padding: 8px;
   border-radius: 24px;
-  border: 1px solid var(--color-zinc-300);
+  border: 1px solid var(--color-gray-opacity-10);
   transition: all 200ms ease-out;
 }
 .spotify-link:hover {
@@ -194,13 +157,13 @@ h3 span {
   top: 14px;
   left: 14px;
   background-color: var(--color-green);
-  color: var(--color-zinc-950);
+  color: var(--color-black);
   border-radius: 50%;
   padding: 8px;
   transition: all 200ms ease-out;
 }
 .spotify-link:hover .spotify-cover-icon {
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0 0 16px var(--color-green-opacity-80);
 }
 .spotify-link h3 {
@@ -211,7 +174,7 @@ h3 span {
   font-size: 16px;
   padding: 4px 16px;
   border-radius: 100px;
-  background-color: var(--color-zinc-200);
+  background-color: var(--color-lightgray);
 }
 
 /* Mail */
@@ -225,63 +188,77 @@ h3 span {
   align-items: center;
   gap: 8px;
   position: relative;
-  color: var(--color-zinc-500);
+  color: var(--color-gray);
   transition: all 200ms ease-out;
   cursor: pointer;
 }
 .email-link svg {
   transition: all 200ms ease-out;
 }
-.email-link:hover svg {
-  color: var(--color-zinc-950);
-  transform: scale(1.05);
+.email-link:hover {
+  color: var(--color-black);
+  transform: scale(1.01);
 }
 .copy-email {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   display: flex;
   align-items: center;
   align-self: flex-start;
   gap: 8px;
-  font-size: 16px;
-  color: var(--color-zinc-500);
-  padding: 2px 8px;
-  background-color: var(--color-zinc-100);
-  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-gray);
+  padding: 8px 16px;
+  line-height: 1.4;
+  background-color: var(--color-black);
+  border-radius: 100px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
   transition: opacity 200ms ease-out;
 }
+.copy-email svg {
+  color: var(--color-green);
+}
 
+.social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .github-link {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  line-height: 1;
-  color: var(--color-zinc-500);
-  border: 1px solid var(--color-zinc-300);
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--color-lightgray);
+  background-color: var(--color-black);
   border-radius: 100px;
   transition: all 200ms ease-out;
 }
 .github-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
-.github-link svg {
-  transition: all 200ms ease-out;
-}
-.github-link:hover svg {
-  color: var(--color-zinc-950);
+.social-btn {
+  color: var(--color-darkgray);
+  background-color: var(--color-lightgray);
+  cursor: pointer;
 }
 
 .link {
   display: flex;
-  color: var(--color-zinc-500);
+  color: var(--color-gray);
   transition: all 200ms ease-out;
 }
 .link svg {
   transition: all 200ms ease-out;
 }
 .link:hover {
-  color: var(--color-zinc-950);
-  transform: scale(1.05);
+  color: var(--color-black);
+  transform: scale(1.01);
 }
 
 /* Projects */
@@ -319,7 +296,7 @@ h3 span {
 .project-img img {
   display: block;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 16px;
   width: 100%;
   height: 100%;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -379,7 +356,7 @@ h3 span {
 }
 .project-title p {
   font-size: 12px;
-  color: var(--color-zinc-500);
+  color: var(--color-gray);
 }
 .project-title h3 {
   font-size: 18px;
@@ -391,8 +368,8 @@ h3 span {
   left: 0;
   width: 100%;
   height: 50%;
-  border-bottom-right-radius: 24px;
-  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
   backdrop-filter: blur(5px);
   -webkit-mask: linear-gradient(
     0deg,
@@ -422,17 +399,14 @@ h3 span {
   gap: 8px;
   text-transform: uppercase;
   font-size: 14px;
+  transition: all 200ms ease-out;
 }
 .live-link:hover {
-  color: var(--color-zinc-500);
-  transform: scale(1);
-}
-.live-link:hover svg {
-  color: var(--color-zinc-950);
-  transform: scale(1.05);
+  color: var(--color-black);
+  transform: scale(1.01);
 }
 
 .copyright {
   font-size: 14px;
-  color: var(--color-zinc-500);
+  color: var(--color-gray);
 }
