@@ -70,9 +70,10 @@ h1 span {
 h3 {
   font-size: 18px;
   font-weight: 600;
+  color: var(--color-gray);
   display: flex;
   align-items: center;
-  color: var(--color-gray);
+  gap: 4px;
 }
 
 .container {
@@ -120,10 +121,8 @@ h3 {
   color: var(--color-darkgray);
   transition: all 150ms ease-out;
 }
-.btn-play {
-  box-shadow: none;
-  color: var(--color-darkgray);
-  background-color: var(--color-lightgray);
+.btn-play svg {
+  color: var(--color-green);
 }
 
 /* Main Content */
@@ -251,4 +250,5 @@ h3 {
 .footer p {
   font-size: 14px;
   padding-bottom: 40px;
+  color: var(--color-gray);
 }
