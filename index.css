@@ -3,27 +3,22 @@
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-green: #1ed760;
-  --color-lightgray: #f5f5f5;
-  --color-lightgray-bg: #eee;
-  --color-gray: #999;
-  --color-darkgray: #666;
-  --color-lime: #d5e300;
-  --color-gray-d3: #d3d3d3;
-  --color-lightgreen: #d0e9bc;
-  --color-yellow: #ffeb8b;
-  --color-blue: #bce7f0;
-  --color-gray-opacity-10: rgb(0 0 0 / 0.1);
-  --color-green-opacity-10: rgb(30 215 96 / 0.05);
-  --color-green-opacity-80: rgb(30 215 96 / 0.8);
+  --color-gray-1: #fafafa;
+  --color-gray-2: #ededed;
+  --color-gray-3: #a1a1a1;
+  --color-gray-4: #666666;
+  --color-gray-5: #1a1a1a;
+  --color-gray-6: #171717;
+  --color-pink: #d10074;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
-  color: var(--color-black);
+  color: var(--color-gray-3);
   font-weight: 400;
+  background-color: var(--color-black);
 }
 
 * {
@@ -38,7 +33,7 @@ body {
 }
 
 a {
-  color: var(--color-black);
+  color: var(--color-gray-2);
   text-decoration: none;
 }
 
@@ -59,116 +54,60 @@ strong {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.2;
 }
 h1 span {
-  color: var(--color-darkgray);
+  color: var(--color-gray-2);
+}
+
+p span {
+  color: var(--color-gray-2);
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--color-gray);
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  color: var(--color-gray-4);
 }
 
 .container {
-  max-width: 460px;
-  padding: 0 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+}
+
+.row {
+  max-width: 420px;
 }
 
 .avatar {
   display: flex;
-  color: var(--color-gray);
-  padding-top: 16px;
 }
 
 .link {
-  border-bottom: 1px solid var(--color-gray-d3);
+  border-bottom: 1px solid var(--color-gray-4);
   transition: all 350ms ease-out;
 }
 .link:hover {
-  border-color: var(--color-black);
+  color: var(--color-pink);
+  border-color: var(--color-pink);
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  gap: 8px;
-  padding: 0 16px;
-  height: 40px;
-  color: var(--color-gray-d3);
-  font-weight: 500;
-  background-color: var(--color-black);
-  border-radius: 100px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  cursor: pointer;
-  transition: all 150ms ease-out;
-}
-.btn:hover svg {
-  transform: scale(1.1) rotate(-6deg);
-}
-.btn svg {
-  color: var(--color-darkgray);
-  transition: all 150ms ease-out;
-}
-.btn-play svg {
-  color: var(--color-green);
-}
-
-/* Main Content */
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.nav {
-  display: none;
-  align-items: center;
-  gap: 16px;
-}
-.tab {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-gray);
-  transition: all 150ms ease-out;
-  transform: scale(0.9);
-}
-.tab:hover {
-  color: var(--color-darkgray);
-}
-.tab.active {
-  color: var(--color-black);
-  transform: scale(1);
-}
-/* .tab-content {
-  display: none;
-}
-.tab-content.show {
-  display: block;
-} */
-
-.just {
-  font-size: 14px;
-  color: var(--color-gray);
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.about-content,
-.music {
+.about {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.about-content p {
+  margin-top: 8px;
 }
 
 .social {
@@ -176,23 +115,62 @@ h3 {
   align-items: center;
   gap: 8px;
 }
-.btn-email {
-  box-shadow: none;
-  color: var(--color-darkgray);
-  background-color: var(--color-lightgray);
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  height: 40px;
+  color: var(--color-gray-2);
+  font-weight: 500;
+  font-size: 14px;
+  background-color: var(--color-gray-6);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 350ms ease-out;
+}
+.btn svg {
+  transition: all 350ms ease-out;
+}
+.btn:hover svg {
+  transform: scale(1.1) rotate(-6deg);
+}
+.btn-github {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(209, 0, 116, 1) 11.2%,
+    rgba(110, 44, 107, 1) 91.1%
+  );
+}
+.btn-github::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  z-index: -1;
+  background-color: #000;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(209, 0, 116, 1) 11.2%,
+    rgba(110, 44, 107, 1) 91.1%
+  );
+  filter: blur(12px);
+  opacity: 0.8;
 }
 
 /* Projects */
-.projects-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.projects {
+  max-width: 1440px;
 }
 
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
 }
 @media screen and (min-width: 800px) {
   .projects-list {
@@ -206,12 +184,11 @@ h3 {
 }
 .project {
   display: flex;
-  width: 262px;
-  height: 567px;
+  width: 100%;
+  height: auto;
   border-radius: 24px;
-  background-color: var(--color-white);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   overflow: hidden;
 }
 .project img {
@@ -219,36 +196,41 @@ h3 {
   object-fit: fill;
   width: 100%;
   height: 100%;
+  opacity: 0.9;
 }
 .project-1 {
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
 }
 .project-2 {
   transform: rotate(1deg);
 }
 .project-3 {
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
 }
 .project-links {
   display: flex;
   align-items: center;
   gap: 16px;
 }
+.project-links p {
+  font-size: 14px;
+  color: var(--color-gray-3);
+  font-weight: 500;
+}
 .project-link {
   display: flex;
-  color: var(--color-gray);
-  transition: all 150ms ease-out;
+  color: var(--color-gray-3);
+  transition: all 350ms ease-out;
 }
 .project-link svg {
-  transition: all 150ms ease-out;
+  transition: all 350ms ease-out;
 }
 .project-link:hover svg {
-  color: var(--color-black);
+  color: var(--color-pink);
   transform: scale(1.1) rotate(-6deg);
 }
 
 .footer p {
   font-size: 14px;
-  padding-bottom: 40px;
-  color: var(--color-gray);
+  color: var(--color-gray-4);
 }
