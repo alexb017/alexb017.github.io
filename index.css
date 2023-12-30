@@ -9,12 +9,17 @@
   --color-gray-4: #666666;
   --color-gray-5: #1a1a1a;
   --color-gray-6: #171717;
-  --color-pink: #d10074;
+}
+
+body.light {
+  --color-black: #fafafa;
+  --color-gray-2: #171717;
+  --color-gray-3: #666666;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--color-gray-3);
   font-weight: 400;
@@ -54,9 +59,9 @@ strong {
 }
 
 h1 {
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
 }
 h1 span {
   color: var(--color-gray-2);
@@ -87,6 +92,11 @@ h3 {
 .row {
   max-width: 420px;
 }
+@media screen and (min-width: 1024px) {
+  .row {
+    margin-left: 160px;
+  }
+}
 
 .avatar {
   display: flex;
@@ -97,8 +107,7 @@ h3 {
   transition: all 350ms ease-out;
 }
 .link:hover {
-  color: var(--color-pink);
-  border-color: var(--color-pink);
+  border-color: var(--color-gray-2);
 }
 
 .about {
@@ -106,10 +115,23 @@ h3 {
   flex-direction: column;
   gap: 16px;
 }
-.about-content p {
-  margin-top: 8px;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-gray-2);
+}
 .social {
   display: flex;
   align-items: center;
@@ -122,11 +144,11 @@ h3 {
   gap: 8px;
   padding: 0 16px;
   height: 40px;
-  color: var(--color-gray-2);
+  color: var(--color-gray-3);
   font-weight: 500;
   font-size: 14px;
   background-color: var(--color-gray-6);
-  border-radius: 100px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 350ms ease-out;
 }
@@ -134,13 +156,16 @@ h3 {
   transition: all 350ms ease-out;
 }
 .btn:hover svg {
-  transform: scale(1.1) rotate(-6deg);
+  color: var(--color-gray-2);
+  transform: scale(1.1);
 }
 .btn-github {
-  background-image: linear-gradient(
-    109.6deg,
-    rgba(209, 0, 116, 1) 11.2%,
-    rgba(110, 44, 107, 1) 91.1%
+  transform: rotate(-2deg);
+  color: var(--color-gray-2);
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(120, 50, 255, 1) 0%,
+    rgba(50, 150, 250, 1) 91%
   );
 }
 .btn-github::before {
@@ -152,11 +177,11 @@ h3 {
   height: 100%;
   border-radius: 100px;
   z-index: -1;
-  background-color: #000;
-  background-image: linear-gradient(
-    109.6deg,
-    rgba(209, 0, 116, 1) 11.2%,
-    rgba(110, 44, 107, 1) 91.1%
+  background-color: var(--color-black);
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(120, 50, 255, 1) 0%,
+    rgba(50, 150, 250, 1) 91%
   );
   filter: blur(12px);
   opacity: 0.8;
@@ -170,9 +195,9 @@ h3 {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .projects-list {
     flex-direction: row;
   }
@@ -186,7 +211,7 @@ h3 {
   display: flex;
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   overflow: hidden;
@@ -209,8 +234,16 @@ h3 {
 }
 .project-links {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+@media screen and (min-width: 1400px) {
+  .project-links {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
 }
 .project-links p {
   font-size: 14px;
@@ -219,6 +252,9 @@ h3 {
 }
 .project-link {
   display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
   color: var(--color-gray-3);
   transition: all 350ms ease-out;
 }
@@ -226,8 +262,8 @@ h3 {
   transition: all 350ms ease-out;
 }
 .project-link:hover svg {
-  color: var(--color-pink);
-  transform: scale(1.1) rotate(-6deg);
+  color: var(--color-gray-2);
+  transform: scale(1.1);
 }
 
 .footer p {
