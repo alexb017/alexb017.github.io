@@ -88,19 +88,23 @@ h3 {
 }
 
 .w-480 {
-  width: 480px;
+  max-width: 480px;
+  width: 100%;
 }
 
 .w-680 {
-  width: 680px;
+  max-width: 680px;
+  width: 100%;
 }
 
 .w-800 {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .w-980 {
-  width: 980px;
+  max-width: 980px;
+  width: 100%;
 }
 
 .link {
@@ -108,11 +112,13 @@ h3 {
   align-items: center;
   gap: 4px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--blue);
+  transition: all 150ms ease-out;
 }
 .link:hover {
-  text-decoration: none;
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .link-github {
@@ -149,11 +155,23 @@ h3 {
 
 /* Nav */
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255 255 255 / 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
+.nav-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0;
-  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+  height: 80px;
 }
 .title {
   font-weight: 500;
@@ -209,9 +227,15 @@ h3 {
 
 .project-info {
   display: flex;
+  flex-direction: column;
   gap: 40px;
   padding-bottom: 160px;
   border-bottom: 1px solid var(--gray-100);
+}
+@media screen and (min-width: 768px) {
+  .project-info {
+    flex-direction: row;
+  }
 }
 .project-info-left {
   display: flex;
