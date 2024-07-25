@@ -68,11 +68,65 @@ strong {
   width: 50%;
   height: 100%;
 }
+.left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  width: 420px;
+}
 
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+.tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.tab:hover {
+  padding: 6px 12px;
+  border-radius: 12px;
+  background-color: var(--light-gray);
+}
 .tab.active {
   color: var(--blue);
 }
 
+.tab-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tab-left svg {
+  color: var(--gray);
+}
+
+.tab-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-tech-stack {
+  font-size: 12px;
+  padding: 2px 6px;
+  color: var(--gray);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.tab-year {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* Right */
 .right {
   position: relative;
   width: 50%;
