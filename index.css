@@ -69,6 +69,10 @@ strong {
   height: 100%;
 }
 
+.tab.active {
+  color: var(--blue);
+}
+
 .right {
   position: relative;
   width: 50%;
@@ -87,7 +91,7 @@ strong {
   padding: 40px;
 }
 
-.item.active {
+.tab-content.show {
   display: flex;
 }
 

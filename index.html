@@ -6,17 +6,24 @@
     <title>Alex B.</title>
     <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <main class="main">
       <div class="left">
-        <div class="left-top"></div>
+        <div class="left-top">
+          <button class="tab active" data-content="#store">store</button>
+          <button class="tab" data-content="#note">note</button>
+          <button class="tab" data-content="#grocery">grocery</button>
+        </div>
         <div class="left-bottom"></div>
       </div>
       <div class="right">
         <!-- Item 1 -->
-        <div class="item item-1 active">
-          <div class="right-top"></div>
+        <div id="store" class="item item-1 tab-content show">
+          <div class="right-top">
+            <h1>Retro Store App</h1>
+          </div>
           <div class="right-center">
             <div class="items">
               <figure class="figure">
@@ -82,8 +89,10 @@
         <!-- End Item 1 -->
 
         <!-- Item 2 -->
-        <div class="item item-2">
-          <div class="right-top"></div>
+        <div id="note" class="item item-2 tab-content">
+          <div class="right-top">
+            <h1>Note Taking App</h1>
+          </div>
           <div class="right-center">
             <div class="items">
               <figure class="figure">
@@ -135,8 +144,10 @@
         <!-- End Item 2 -->
 
         <!-- Item 3 -->
-        <div class="item item-3">
-          <div class="right-top"></div>
+        <div id="grocery" class="item item-3 tab-content">
+          <div class="right-top">
+            <h1>Grocery Store</h1>
+          </div>
           <div class="right-center">
             <div class="items">
               <figure class="figure">
