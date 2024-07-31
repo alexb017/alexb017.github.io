@@ -4,21 +4,19 @@
   --black: #000000;
   --white: #ffffff;
   --light-gray: #f5f5f5;
-  --lighter-gray: #fafafa;
   --gray: #999999;
+  --lighter-gray: #e5e5e5;
   --dark-gray: #666666;
-  --darker-gray: #262626;
   --red: #ff6347;
   --beige: #f4efea;
   --blue: #0076ff;
-  --blue-bg: #fafbfc;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  color: var(--black);
+  color: var(--dark-gray);
   font-weight: 500;
 }
 
@@ -57,29 +55,22 @@ strong {
 
 .main {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }
 
-.left {
+.about {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  height: 100%;
+  justify-content: center;
+  height: 100vh;
 }
-.left-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 40px;
-  width: 420px;
-  height: 100%;
-}
-.left-top {
+.about-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 480px;
 }
 
 .avatar {
@@ -94,122 +85,64 @@ strong {
   height: 100%;
 }
 
-.header-projects {
-  color: var(--gray);
-}
-
-.copyright {
-  font-size: 14px;
-  color: var(--gray);
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  flex-direction: column;
-}
-.tab {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 0;
-  cursor: pointer;
-  background-color: transparent;
-  transition: all 200ms ease-in;
-}
-.tab:hover {
-  padding: 6px 12px;
-  border-radius: 12px;
-  background-color: var(--light-gray);
-}
-.tab.active {
-  color: var(--blue);
-}
-
-.tab-left {
+.github-profile {
   display: flex;
   align-items: center;
-  gap: 6px;
 }
-.tab-left svg {
-  color: var(--gray);
-}
-
-.tab-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tab-tech-stack {
+.github-profile p {
   font-size: 12px;
-  padding: 2px 6px;
-  color: var(--gray);
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  line-height: 1.2;
+  padding-left: 10px;
+  border-left: 1px solid var(--lighter-gray);
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
 .email {
-  text-decoration: underline;
+  transition: all 200ms ease-in;
+  border-bottom: 1px solid var(--lighter-gray);
 }
+.email:hover {
+  border-bottom-color: var(--dark-gray);
+}
+
+.intro-projects {
+  color: var(--gray);
+}
+
 .btn-github {
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
   padding: 4px 12px;
   border-radius: 100px;
+  margin-right: 10px;
   background-color: var(--black);
   color: var(--white);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: all 200ms ease-in;
 }
 
-.tab-year {
-  font-size: 12px;
-  color: var(--gray);
-}
-
-/* Right */
-.right {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background-color: var(--lighter-gray);
-  overflow: hidden;
-}
+/* Projects */
 .item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0 0 0 0;
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 40px;
 }
-
-.tab-content.show {
-  display: flex;
-}
-
-/* Images */
 .items {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 40px;
-  padding: 40px;
 }
 .figure {
   overflow: hidden;
   border-radius: 20px;
+  opacity: 0;
+  box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px,
+    rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 2px 2px -1px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+    rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px,
+    rgba(42, 51, 70, 0.03) 0px 10px 10px -5px,
+    rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
 }
 .image {
   display: block;
@@ -232,13 +165,6 @@ strong {
   text-align: right;
 }
 
-.fullstack,
-.live-on-vercel,
-.source-code,
-.tech-stack {
-  font-size: 14px;
-}
-
 .link {
   color: var(--blue);
 }
@@ -251,4 +177,29 @@ strong {
 .tech-stack-list p {
   font-size: 14px;
   color: var(--gray);
+}
+
+/* Animation */
+.items .figure:nth-child(1) {
+  animation: slideIn 0.5s ease-in-out 0.5s forwards;
+}
+.items .figure:nth-child(2) {
+  animation: slideIn 0.5s ease-in-out 1s forwards;
+}
+.items .figure:nth-child(3) {
+  animation: slideIn 0.5s ease-in-out 1.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    filter: blur(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
 }
