@@ -3,12 +3,12 @@
 :root {
   --black: #000000;
   --white: #ffffff;
-  --light-gray: #f5f5f5;
+  --light-gray: #f4f4f5;
   --gray: #999999;
   --lighter-gray: #e5e5e5;
   --dark-gray: #666666;
-  --red: #ff6347;
-  --beige: #f4efea;
+  --violet: #f9d5f9;
+  --emerald: #d1fae5;
   --blue: #0076ff;
   --shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -20,6 +20,7 @@ body {
   line-height: 1.4;
   color: var(--black);
   font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
 * {
@@ -67,41 +68,22 @@ strong {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
 .avatar {
-  width: 32px;
-  height: 32px;
+  display: none;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  overflow: hidden;
 }
 .avatar-image {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.github-profile {
-  display: flex;
-  align-items: center;
-}
-.github-profile p {
-  font-size: 12px;
-  color: var(--gray);
-  line-height: 1;
-  padding-left: 10px;
-  border-left: 1px solid var(--lighter-gray);
-}
-.btn-github {
-  display: flex;
-  margin-right: 10px;
-  transition: all 200ms ease-in;
-}
-.btn-github:hover {
-  transform: scale(1.1);
+  border-radius: inherit;
 }
 
 .content {
@@ -116,12 +98,20 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 520px;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 480px;
   width: 100%;
   padding: 20px;
 }
 
 .email {
+  -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
   border-bottom: 1px solid var(--lighter-gray);
 }
@@ -129,10 +119,45 @@ strong {
   border-bottom-color: var(--dark-gray);
 }
 
-@media screen and (min-width: 768px) {
-  .intro-projects {
-    margin-right: 16.6666666667%;
-  }
+.intro-projects {
+  color: var(--gray);
+  font-size: 14px;
+  margin-right: 58.3333333333%;
+}
+
+/* Contact */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.github-profile {
+  display: flex;
+  align-items: center;
+}
+.github-profile p {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1;
+  padding-left: 10px;
+  border-left: 1px solid var(--lighter-gray);
+}
+.btn-github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  margin-right: 10px;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.btn-github:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Projects */
@@ -145,13 +170,14 @@ strong {
 }
 
 .item {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background-color: var(--white);
   border-radius: 24px;
   cursor: pointer;
   padding: 4px;
   box-shadow: var(--shadow);
+  -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
 .item-content {
@@ -164,34 +190,40 @@ strong {
   border-radius: inherit;
 }
 .item-1 {
+  -webkit-transform: rotate(-9deg) translateX(20px);
   transform: rotate(-9deg) translateX(20px);
 }
 .item-1:hover {
+  -webkit-transform: rotate(0deg) translateX(20px) scale(1.1);
   transform: rotate(0deg) translateX(20px) scale(1.1);
 }
 .item-2 {
+  -webkit-transform: rotate(9deg);
   transform: rotate(9deg);
   z-index: 1;
 }
 .item-2:hover {
+  -webkit-transform: rotate(0deg) scale(1.1);
   transform: rotate(0deg) scale(1.1);
 }
 .item-3 {
+  -webkit-transform: rotate(-9deg) translateX(-20px);
   transform: rotate(-9deg) translateX(-20px);
   z-index: 2;
 }
 .item-3:hover {
+  -webkit-transform: rotate(0deg) translateX(-20px) scale(1.1);
   transform: rotate(0deg) translateX(-20px) scale(1.1);
 }
 
 .item-1 .item-content {
-  background-color: #f1f5f8;
+  background-color: var(--light-gray);
 }
 .item-2 .item-content {
-  background-color: #b1e4e3;
+  background-color: var(--violet);
 }
 .item-3 .item-content {
-  background-color: #d6bfdd;
+  background-color: var(--emerald);
 }
 
 .figure {
@@ -205,4 +237,9 @@ strong {
   height: 100%;
   object-fit: contain;
   border-radius: inherit;
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--gray);
 }
