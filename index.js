@@ -1,14 +1,11 @@
-const tabs = document.querySelectorAll('.tab');
+const btnOpenNote = document.querySelector('.btn-note');
+const dialogNote = document.querySelector('.dialog-note');
+const btnCloseNote = document.querySelector('.btn-close-note');
 
-tabs.forEach((tab) => {
-  tab.addEventListener('click', (event) => {
-    document.querySelector('.tab.active').classList.remove('active');
+btnOpenNote.addEventListener('click', () => {
+  dialogNote.showModal();
+});
 
-    event.currentTarget.classList.add('active');
-
-    document.querySelector('.tab-content.show').classList.remove('show');
-
-    const selector = event.currentTarget.dataset.content;
-    document.querySelector(selector).classList.add('show');
-  });
+btnCloseNote.addEventListener('click', () => {
+  dialogNote.close();
 });
