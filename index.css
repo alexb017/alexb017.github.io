@@ -184,7 +184,7 @@ strong {
   padding: 20px;
 }
 
-.item {
+.btn-project {
   width: 175px;
   height: 175px;
   background-color: var(--white);
@@ -195,7 +195,7 @@ strong {
   -webkit-transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.item-content {
+.btn-project-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -205,55 +205,39 @@ strong {
   height: 100%;
   border-radius: inherit;
 }
-.item-content h3 {
+.btn-project-content h3 {
   font-size: 16px;
   font-weight: 500;
   color: var(--dark-gray);
 }
-.item-1 {
+.btn-retro {
   -webkit-transform: rotate(-9deg) translateX(20px);
   transform: rotate(-9deg) translateX(20px);
 }
-.item-1:hover {
+.btn-retro:hover {
   -webkit-transform: rotate(0deg) translateX(20px) scale(1.1);
   transform: rotate(0deg) translateX(20px) scale(1.1);
 }
-.item-2 {
+.btn-note {
   -webkit-transform: rotate(9deg);
   transform: rotate(9deg);
   z-index: 1;
 }
-.item-2:hover {
+.btn-note:hover {
   -webkit-transform: rotate(0deg) scale(1.1);
   transform: rotate(0deg) scale(1.1);
 }
-.item-3 {
+.btn-grocery {
   -webkit-transform: rotate(-9deg) translateX(-20px);
   transform: rotate(-9deg) translateX(-20px);
   z-index: 2;
 }
-.item-3:hover {
+.btn-grocery:hover {
   -webkit-transform: rotate(0deg) translateX(-20px) scale(1.1);
   transform: rotate(0deg) translateX(-20px) scale(1.1);
 }
 
-.item-1 .item-content {
-  background-color: var(--light-gray);
-}
-.item-2 .item-content {
-  background-color: var(--red);
-}
-.item-2 .item-content .item-svg {
-  background-color: var(--violet);
-}
-.item-3 .item-content {
-  background-color: var(--green);
-}
-.item-3 .item-content .item-svg {
-  background-color: var(--blue);
-}
-
-.item-svg {
+.btn-project-svg {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -261,6 +245,22 @@ strong {
   background-color: var(--black);
   border-radius: 12px;
   box-shadow: var(--shadow);
+}
+
+.btn-retro .btn-project-content {
+  background-color: var(--light-gray);
+}
+.btn-note .btn-project-content {
+  background-color: var(--red);
+}
+.btn-note .btn-project-content .btn-project-svg {
+  background-color: var(--violet);
+}
+.btn-grocery .btn-project-content {
+  background-color: var(--green);
+}
+.btn-grocery .btn-project-content .btn-project-svg {
+  background-color: var(--blue);
 }
 
 .items {
@@ -297,20 +297,32 @@ strong {
 dialog[open] {
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   overflow: visible;
   background: transparent;
   border: none;
   border-radius: 32px;
-}
-dialog {
+  -webkit-animation: fadeIn 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fadeIn 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 dialog::backdrop {
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  animation: fadeInUp 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-animation: fadeInOpacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: fadeInOpacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   background: rgba(255, 255, 255, 0.1);
+}
+
+dialog[closing] {
+  -webkit-animation: fadeOut 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: fadeOut 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+dialog[closing]::backdrop {
+  -webkit-animation: fadeOutOpacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: fadeOutOpacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .dialog-content {
@@ -332,6 +344,12 @@ dialog::backdrop {
   justify-content: center;
   background-color: var(--white);
   box-shadow: var(--shadow);
+  -webkit-transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-close:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .dialog-links {
@@ -356,18 +374,41 @@ dialog::backdrop {
 
 @keyframes fadeIn {
   from {
-    transform: translate(-50%, -50%) scale(0.9);
+    -webkit-transform: translate(-50%, -50%) scale(0.98);
+    transform: translate(-50%, -50%) scale(0.98);
   }
   to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.98);
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+}
+
+@keyframes fadeInOpacity {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes fadeOutOpacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

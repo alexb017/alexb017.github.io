@@ -1,11 +1,30 @@
-const btnOpenNote = document.querySelector('.btn-note');
-const dialogNote = document.querySelector('.dialog-note');
-const btnCloseNote = document.querySelector('.btn-close-note');
+const btnsOpen = document.querySelectorAll('.btn-project');
+const btnsClose = document.querySelectorAll('.btn-close');
 
-btnOpenNote.addEventListener('click', () => {
-  dialogNote.showModal();
+btnsOpen.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    if (event.currentTarget.classList.contains('btn-project')) {
+      const selector = event.currentTarget.dataset.dialog;
+      const dialog = document.getElementById(selector);
+      dialog.showModal();
+    }
+  });
 });
 
-btnCloseNote.addEventListener('click', () => {
-  dialogNote.close();
+btnsClose.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    if (event.currentTarget.classList.contains('btn-close')) {
+      const selector = event.currentTarget.dataset.close;
+      const dialog = document.getElementById(selector);
+      dialog.setAttribute('closing', '');
+      dialog.addEventListener(
+        'animationend',
+        () => {
+          dialog.removeAttribute('closing');
+          dialog.close();
+        },
+        { once: true }
+      );
+    }
+  });
 });
