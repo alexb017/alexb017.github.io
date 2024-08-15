@@ -193,11 +193,17 @@ strong {
 /* Projects */
 .cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
   width: 100%;
   padding: 20px;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+  }
 }
 .cards::before {
   content: '';
@@ -297,7 +303,12 @@ strong {
 .card-retro {
   width: 200px;
   height: 200px;
-  transform: rotate(-2deg) translate(20px, -40px);
+  transform: rotate(-2deg) translate(-40px, -40px);
+}
+@media screen and (min-width: 768px) {
+  .card-retro {
+    transform: rotate(-2deg) translate(40px, -40px);
+  }
 }
 .card-retro::before {
   transform: rotate(-4deg) translate(4px, 4px);
@@ -305,38 +316,50 @@ strong {
 .card-note {
   width: 240px;
   height: 240px;
-  transform: rotate(2deg);
+  transform: rotate(2deg) translateX(40px);
+}
+@media screen and (min-width: 768px) {
+  .card-note {
+    transform: rotate(2deg) translateX(0px);
+  }
 }
 .card-note::before {
   transform: rotate(4deg) translate(4px, -4px);
 }
 .card-grocery {
-  transform: rotate(-2deg) translate(-20px, 20px);
+  transform: rotate(-2deg) translate(-40px, 20px);
+}
+@media screen and (min-width: 768px) {
+  .card-grocery {
+    transform: rotate(-2deg) translate(-20px, 20px);
+  }
 }
 .card-grocery::before {
   transform: rotate(-4deg) translate(-4px, 4px);
 }
 
-.card:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-}
-.card-retro:hover {
-  -webkit-transform: scale(1.05) translate(20px, -40px);
-  transform: scale(1.05) translate(20px, -40px);
-}
-.card-retro:hover::before {
-  transform: rotate(-12deg) translate(4px, 4px);
-}
-.card-note:hover::before {
-  transform: rotate(12deg) translate(4px, -4px);
-}
-.card-grocery:hover {
-  -webkit-transform: scale(1.05) translate(-20px, 20px);
-  transform: scale(1.05) translate(-20px, 20px);
-}
-.card-grocery:hover::before {
-  transform: rotate(-12deg) translate(-4px, 4px);
+@media screen and (min-width: 1280px) {
+  .card:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  .card-retro:hover {
+    -webkit-transform: scale(1.05) translate(40px, -40px);
+    transform: scale(1.05) translate(40px, -40px);
+  }
+  .card-retro:hover::before {
+    transform: rotate(-12deg) translate(4px, 4px);
+  }
+  .card-note:hover::before {
+    transform: rotate(12deg) translate(4px, -4px);
+  }
+  .card-grocery:hover {
+    -webkit-transform: scale(1.05) translate(-20px, 20px);
+    transform: scale(1.05) translate(-20px, 20px);
+  }
+  .card-grocery:hover::before {
+    transform: rotate(-12deg) translate(-4px, 4px);
+  }
 }
 
 .card-image {
