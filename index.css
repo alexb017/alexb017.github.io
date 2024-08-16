@@ -3,24 +3,24 @@
 :root {
   --black-color: #000000;
   --white-color: #ffffff;
-  --body-bg: #fafafa;
-  --hyperlink-color: #0088ff;
-  --selection-color: #e5e5e5;
-  --light-gray-color: #f4f4f5;
-  --light-gray-color-2: #d4d4d8;
-  --light-gray-rgba-color: rgba(244, 244, 245, 0.5);
-  --light-white-rgba-color: rgba(255, 255, 255, 0.1);
-  --gray-color: #999999;
-  --dark-gray-color: #666666;
-  --gray-rgba-color: rgba(0, 0, 0, 0.6);
-  --violet: #7c3aed;
-  --blue: #3b82f6;
-  --green: #22c55e;
-  --red: #fee2e2;
-  --yellow: #eab308;
+  --gray-fa-color: #fafafa;
+  --gray-f5-color: #f5f5f5;
+  --gray-e5-color: #e5e5e5;
+  --gray-d4-color: #d4d4d4;
+  --gray-a3-color: #a3a3a3;
+  --gray-73-color: #737373;
+  --gray-52-color: #525252;
+  --gray-40-color: #404040;
+  --gray-26-color: #262626;
+  --white-rgba-01-color: rgba(255, 255, 255, 0.1);
+  --gray-rgba-35-color: rgba(245, 245, 245, 0.35);
+  --blue-color: #3b82f6;
+  --lime-color: #84cc16;
+  --yellow-color: #eab308;
   --shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  --shadow-2: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  --shadow-1: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  --shadow-2: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
   line-height: 1.4;
   color: var(--black-color);
   font-weight: 400;
-  background-color: var(--body-bg);
+  background-color: var(--gray-fa-color);
 }
 
 * {
@@ -117,7 +117,7 @@ strong {
   line-height: 1.2;
 }
 .description span {
-  color: var(--dark-gray-color);
+  color: var(--gray-52-color);
 }
 
 .container {
@@ -129,14 +129,14 @@ strong {
 .email {
   transition: all 200ms ease-in;
   text-decoration: underline;
-  color: var(--dark-gray-color);
+  color: var(--gray-52-color);
 }
 .email:hover {
-  color: var(--hyperlink-color);
+  color: var(--blue-color);
 }
 
 .intro-projects {
-  color: var(--dark-gray-color);
+  color: var(--gray-52-color);
 }
 
 /* Contact */
@@ -151,10 +151,10 @@ strong {
 }
 .github-profile p {
   font-size: 12px;
-  color: var(--gray-color);
+  color: var(--gray-73-color);
   line-height: 1.2;
   padding-left: 10px;
-  border-left: 1px solid var(--selection-color);
+  border-left: 1px solid var(--gray-e5-color);
 }
 .btn {
   display: flex;
@@ -162,29 +162,36 @@ strong {
   justify-content: center;
   gap: 4px;
   height: 40px;
-  padding: 0 12px;
-  font-size: 16px;
-  color: var(--selection-color);
+  padding: 0 16px;
+  font-size: 14px;
+  color: var(--gray-e5-color);
   background-color: var(--black-color);
   box-shadow: var(--shadow);
   border-radius: 100px;
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .btn:hover {
-  transform: scale(1.05);
+  background-color: var(--gray-40-color);
 }
 .github-profile .btn {
   margin-right: 10px;
 }
-.btn-vercel {
-  font-size: 14px;
-  background-color: var(--black-color);
-  color: var(--white-color);
+.github-profile .btn svg {
+  color: var(--gray-73-color);
+}
+.btn-vercel svg {
+  color: var(--gray-73-color);
 }
 .btn-github {
-  font-size: 14px;
-  background-color: var(--selection-color);
+  background-color: var(--gray-e5-color);
   color: var(--black-color);
+  box-shadow: none;
+}
+.btn-github svg {
+  color: var(--gray-73-color);
+}
+.btn-github:hover {
+  background-color: var(--gray-d4-color);
 }
 
 /* Projects */
@@ -209,7 +216,7 @@ strong {
   left: 50px;
   width: 250px;
   height: 200px;
-  background-color: var(--gray-color);
+  background-color: var(--gray-73-color);
   z-index: -1;
   filter: blur(100px) opacity(0.3);
 }
@@ -220,7 +227,7 @@ strong {
   right: 50px;
   width: 250px;
   height: 200px;
-  background-color: var(--dark-gray-color);
+  background-color: var(--gray-52-color);
   z-index: -1;
   filter: blur(100px) opacity(0.3);
 }
@@ -246,7 +253,7 @@ strong {
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background-color: var(--light-gray-color);
+  background-color: var(--gray-f5-color);
 }
 .card-content-top {
   display: flex;
@@ -262,21 +269,21 @@ strong {
 }
 .card-title span {
   display: block;
-  color: var(--blue);
+  color: var(--blue-color);
 }
 .card-note .card-title span {
-  color: var(--yellow);
+  color: var(--yellow-color);
 }
 .card-grocery .card-title span {
-  color: var(--green);
+  color: var(--lime-color);
 }
 .card-type {
   font-size: 12px;
-  color: var(--gray-color);
+  color: var(--gray-73-color);
 }
 .card-btn {
   font-size: 14px;
-  color: var(--dark-gray-color);
+  color: var(--gray-52-color);
 }
 
 .card::before {
@@ -290,8 +297,8 @@ strong {
   z-index: -1;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  background-color: var(--light-white-rgba-color);
-  box-shadow: var(--shadow-2);
+  background-color: var(--white-rgba-01-color);
+  box-shadow: var(--shadow-1);
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -357,7 +364,7 @@ strong {
 .card-image {
   position: absolute;
   border-radius: 12px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
 }
 .card-image-retro {
   width: 100px;
@@ -373,7 +380,7 @@ strong {
 .card-number {
   position: absolute;
   font-size: 72px;
-  color: var(--light-gray-color-2);
+  color: var(--gray-d4-color);
   font-weight: 600;
   line-height: 1;
 }
@@ -400,7 +407,7 @@ strong {
 
 .footer p {
   font-size: 14px;
-  color: var(--gray-color);
+  color: var(--gray-73-color);
 }
 
 /* Dialog */
@@ -429,7 +436,7 @@ dialog::backdrop {
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   animation: fadeInOpacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gray-rgba-35-color);
 }
 
 dialog[closing] {
@@ -461,7 +468,7 @@ dialog[closing]::backdrop {
   width: max-content;
   height: 550px;
   border-radius: 24px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-2);
 }
 @media screen and (max-width: 2000px) {
   .figure {
@@ -489,7 +496,6 @@ dialog[closing]::backdrop {
   align-items: center;
   justify-content: center;
   background-color: var(--white-color);
-  box-shadow: var(--shadow);
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media screen and (min-width: 1280px) {
@@ -500,7 +506,7 @@ dialog[closing]::backdrop {
 }
 @media screen and (min-width: 1280px) {
   .btn-close:hover {
-    transform: scale(1.05);
+    background-color: var(--gray-e5-color);
   }
 }
 
@@ -522,7 +528,7 @@ dialog[closing]::backdrop {
   text-align: center;
 }
 .dialog-links-right p span {
-  color: var(--gray-color);
+  color: var(--gray-73-color);
 }
 
 @keyframes fadeIn {
