@@ -17,10 +17,13 @@
   --blue-color: #3b82f6;
   --lime-color: #84cc16;
   --yellow-color: #eab308;
+  --red-color: #ef4444;
   --shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   --shadow-1: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   --shadow-2: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  --shadow-3: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 body {
@@ -29,7 +32,6 @@ body {
   line-height: 1.4;
   color: var(--black-color);
   font-weight: 400;
-  background-color: var(--gray-fa-color);
 }
 
 * {
@@ -107,14 +109,15 @@ strong {
 .about {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
 }
 
 .description {
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -1px;
-  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 .description span {
   color: var(--gray-52-color);
@@ -126,13 +129,89 @@ strong {
   padding: 20px;
 }
 
-.email {
+.about-projects {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-left: 33.333333%;
+}
+
+.box {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 100px;
+  background-color: var(--gray-f5-color);
+}
+.box-multiple-lines {
+  border-radius: 12px;
+}
+.box-bottom-left {
+  border-bottom-left-radius: 4px;
+}
+.box-bottom-right {
+  border-bottom-right-radius: 4px;
+}
+.subheader {
+  font-size: 14px;
+  color: var(--gray-a3-color);
+}
+.box-hello::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background: url('./public/TwemojiWavingHand.png');
+  background-size: contain;
+}
+.box-heart::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(20deg);
+  mask-image: url('./public/SolarHeartBold.png');
+  mask-size: contain;
+  background-color: var(--red-color);
+}
+.box-star::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(-24deg);
+  mask-image: url('./public/SolarStarBold.png');
+  mask-size: contain;
+  background-color: var(--yellow-color);
+}
+.box-github::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(4deg);
+  mask-image: url('./public/LogosGithubIcon.png');
+  mask-size: contain;
+  background-color: var(--gray-26-color);
+}
+
+.link {
+  display: inline-block;
   transition: all 200ms ease-in;
   text-decoration: underline;
-  color: var(--gray-52-color);
+  color: var(--gray-73-color);
+  text-decoration-color: var(--gray-a3-color);
 }
-.email:hover {
-  color: var(--blue-color);
+.link:hover {
+  color: var(--black-color);
 }
 
 .intro-projects {
@@ -143,6 +222,7 @@ strong {
 .contact {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }
 .github-profile {
@@ -163,7 +243,6 @@ strong {
   gap: 4px;
   height: 40px;
   padding: 0 16px;
-  font-size: 14px;
   color: var(--gray-e5-color);
   background-color: var(--black-color);
   box-shadow: var(--shadow);
@@ -195,6 +274,9 @@ strong {
 }
 
 /* Projects */
+.projects p {
+  text-align: center;
+}
 .cards {
   display: flex;
   flex-direction: column;
@@ -209,7 +291,7 @@ strong {
     flex-direction: row;
   }
 }
-.cards::before {
+/* .cards::before {
   content: '';
   position: absolute;
   bottom: -50px;
@@ -230,7 +312,7 @@ strong {
   background-color: var(--gray-52-color);
   z-index: -1;
   filter: blur(100px) opacity(0.3);
-}
+} */
 
 .card {
   position: relative;
@@ -319,6 +401,7 @@ strong {
   width: 240px;
   height: 240px;
   transform: rotate(2deg) translateX(40px);
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .card-note {
@@ -333,7 +416,7 @@ strong {
 }
 @media screen and (min-width: 768px) {
   .card-grocery {
-    transform: rotate(-2deg) translate(-20px, 20px);
+    transform: rotate(-2deg) translate(-20px, -120px);
   }
 }
 .card-grocery::before {
@@ -354,7 +437,7 @@ strong {
     transform: rotate(12deg) translate(4px, -4px);
   }
   .card-grocery:hover {
-    transform: scale(1.05) translate(-20px, 20px);
+    transform: scale(1.05) translate(-20px, -120px);
   }
   .card-grocery:hover::before {
     transform: rotate(-12deg) translate(-4px, 4px);
@@ -450,7 +533,7 @@ dialog[closing]::backdrop {
 .dialog-content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 64px;
 }
 
 .items {
@@ -468,11 +551,12 @@ dialog[closing]::backdrop {
   width: max-content;
   height: 550px;
   border-radius: 24px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-3);
 }
 @media screen and (max-width: 2000px) {
   .figure {
-    height: 450px;
+    height: 350px;
+    border-radius: 16px;
   }
 }
 .wide-figure {
@@ -482,6 +566,12 @@ dialog[closing]::backdrop {
   .wide-figure {
     display: block;
   }
+}
+
+.figcaption {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--gray-a3-color);
 }
 
 .btn-close {
@@ -495,7 +585,7 @@ dialog[closing]::backdrop {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--white-color);
+  background-color: var(--gray-e5-color);
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media screen and (min-width: 1280px) {
@@ -506,7 +596,7 @@ dialog[closing]::backdrop {
 }
 @media screen and (min-width: 1280px) {
   .btn-close:hover {
-    background-color: var(--gray-e5-color);
+    background-color: var(--gray-d4-color);
   }
 }
 

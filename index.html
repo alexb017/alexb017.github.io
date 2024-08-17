@@ -51,15 +51,26 @@
               alt="avatar"
             />
           </div>
-          <p class="description">
-            <span>Hi there 👋, I'm Alex.</span> <br />
-            I'm a fairly curious person, I enjoy creating things, listening to
-            music, and lately reading books. And I like black coffee.
-          </p>
-          <p class="intro-projects">
-            Here are a few things I've built so far that I'm pretty pleased
-            with.
-          </p>
+          <div class="description">
+            <p class="box box-hello">Hey, I'm Alex.</p>
+            <p class="box">I'm a fairly curious person.</p>
+            <p class="box box-multiple-lines box-heart">
+              I enjoy creating things, listening to music, and lately reading
+              books.
+            </p>
+            <p class="box box-bottom-left box-star">And I like black coffee.</p>
+            <p class="subheader">A little about me</p>
+          </div>
+          <div class="about-projects">
+            <p class="box box-multiple-lines box-bottom-right">
+              Here are a few things I've built so far that I'm pretty pleased
+              with.
+            </p>
+            <p class="subheader">Projects</p>
+          </div>
+        </section>
+        <section class="projects container">
+          <p>Little projects</p>
         </section>
         <section class="cards">
           <button
@@ -120,32 +131,20 @@
           </button>
         </section>
         <section class="contact container">
-          <div class="github-profile">
-            <a class="btn" href="https://github.com/alexb017" target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  fill="currentColor"
-                  d="M208.31 75.68A59.78 59.78 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58.14 58.14 0 0 0-7.69-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.8 43.8 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.8 43.8 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.7 41.7 0 0 1 7 22.52Z"
-                />
-              </svg>
+          <p class="box box-github">
+            View my
+            <a class="link" href="https://github.com/alexb017" target="_blank">
               Github
             </a>
-            <p>
-              View my<br />
-              github profile
-            </p>
-          </div>
-          <p>
+            profile.
+          </p>
+          <p class="box box-bottom-left">
             Say hi
-            <a class="email" href="mailto:alexbacirea@gmail.com"
+            <a class="link" href="mailto:alexbacirea@gmail.com"
               >alexbacirea@gmail.com</a
             >
           </p>
+          <p class="subheader">It will be nice to hear from you!</p>
         </section>
         <footer class="footer container">
           <p>&copy; 2024, Alex ✌️</p>
@@ -178,6 +177,7 @@
                 src="./public/images/Retro-Store-App-Homepage.png"
                 alt="Retro-Store-App-Homepage"
               />
+              <figcaption class="figcaption">Homepage</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -185,6 +185,7 @@
                 src="./public/images/Retro-Store-App-Deals.png"
                 alt="Retro-Store-App-Deals"
               />
+              <figcaption class="figcaption">Homepage</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -192,6 +193,7 @@
                 src="./public/images/Retro-Store-App-Item-Dark.png"
                 alt="Retro-Store-App-Item-Dark"
               />
+              <figcaption class="figcaption">Item Details</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -199,6 +201,15 @@
                 src="./public/images/Retro-Store-App-All.png"
                 alt="Retro-Store-App-All"
               />
+              <figcaption class="figcaption">Collections</figcaption>
+            </figure>
+            <figure class="figure wide-figure">
+              <img
+                class="image"
+                src="./public/images/Retro-Store-App.jpg"
+                alt="Retro-Store-App"
+              />
+              <figcaption class="figcaption">Homepage</figcaption>
             </figure>
           </div>
           <div class="dialog-links">
@@ -207,38 +218,14 @@
                 class="btn btn-vercel"
                 href="https://retro-store-app-alexb017s-projects.vercel.app/"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M6 18L18 6m0 0H9m9 0v9"
-                  />
-                </svg>
+              >
                 Live on Vercel</a
               >
               <a
                 class="btn btn-github"
                 href="https://github.com/alexb017/retro-store-app"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M208.31 75.68A59.78 59.78 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58.14 58.14 0 0 0-7.69-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.8 43.8 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.8 43.8 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.7 41.7 0 0 1 7 22.52Z"
-                  />
-                </svg>
+              >
                 Source Code</a
               >
             </div>
@@ -279,6 +266,7 @@
                 src="./public/images/NoteTaking-Notes-White.jpg"
                 alt="NoteTaking-Notes-White"
               />
+              <figcaption class="figcaption">Notes</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -286,6 +274,7 @@
                 src="./public/images/NoteTaking-Notes-Mobile.jpg"
                 alt="NoteTaking-Notes-Mobile"
               />
+              <figcaption class="figcaption">Notes</figcaption>
             </figure>
           </div>
           <div class="dialog-links">
@@ -294,38 +283,14 @@
                 class="btn btn-vercel"
                 href="https://note-taking-app-alexb017.vercel.app/"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M6 18L18 6m0 0H9m9 0v9"
-                  />
-                </svg>
+              >
                 Live on Vercel</a
               >
               <a
                 class="btn btn-github"
                 href="https://github.com/alexb017/note-taking-app"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M208.31 75.68A59.78 59.78 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58.14 58.14 0 0 0-7.69-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.8 43.8 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.8 43.8 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.7 41.7 0 0 1 7 22.52Z"
-                  />
-                </svg>
+              >
                 Source Code</a
               >
             </div>
@@ -366,6 +331,7 @@
                 src="./public/images/Grocery-Store-Homepage.png"
                 alt="Grocery-Store-Homepage"
               />
+              <figcaption class="figcaption">Homepage</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -373,6 +339,7 @@
                 src="./public/images/Grocery-Store-Item.png"
                 alt="Grocery-Store-Item"
               />
+              <figcaption class="figcaption">Item Details</figcaption>
             </figure>
             <figure class="figure">
               <img
@@ -380,6 +347,7 @@
                 src="./public/images/Grocery-Store-Cart.png"
                 alt="Grocery-Store-Cart"
               />
+              <figcaption class="figcaption">Cart</figcaption>
             </figure>
           </div>
           <div class="dialog-links">
@@ -388,38 +356,14 @@
                 class="btn btn-vercel"
                 href="https://grocery-store-alexb017.vercel.app/"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M6 18L18 6m0 0H9m9 0v9"
-                  />
-                </svg>
+              >
                 Live on Vercel</a
               >
               <a
                 class="btn btn-github"
                 href="https://github.com/alexb017/grocery-store"
                 target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M208.31 75.68A59.78 59.78 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58.14 58.14 0 0 0-7.69-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.8 43.8 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.8 43.8 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.7 41.7 0 0 1 7 22.52Z"
-                  />
-                </svg>
+              >
                 Source Code</a
               >
             </div>
