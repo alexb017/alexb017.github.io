@@ -70,8 +70,8 @@ strong {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 96px;
-  margin-top: 80px;
+  gap: 80px;
+  margin-top: 160px;
 }
 
 .image {
@@ -80,6 +80,17 @@ strong {
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
+}
+
+.link {
+  display: inline-block;
+  color: var(--grey-2);
+  border-bottom: 1px solid var(--grey-1);
+  transition: all 0.3s ease-out;
+}
+.link:hover {
+  color: var(--black);
+  border-bottom-color: var(--black);
 }
 
 /* Nav */
@@ -118,7 +129,27 @@ strong {
 }
 
 /* About */
-.about {
+.about,
+.contact {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-right: 41.6666666667%;
+}
+.description {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+.build {
+  margin-right: 25%;
 }
 
 /* Projects */
