@@ -17,6 +17,7 @@
   --primary: #1467e9;
   --primary-hover: #217cf0;
   --primary-pressed: #0359e6;
+  --shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 body {
@@ -26,7 +27,6 @@ body {
   color: var(--black);
   font-weight: 500;
   letter-spacing: -0.5px;
-  background-color: var(--white-grey);
 }
 
 * {
@@ -72,13 +72,15 @@ strong {
   flex-direction: column;
   gap: 80px;
   margin-top: 160px;
+  margin-bottom: 80px;
+  width: 100%;
 }
 
 .image {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: inherit;
+  height: 544px;
+  object-fit: inherit;
   border-radius: inherit;
 }
 
@@ -111,6 +113,12 @@ strong {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+.avatar-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 .btn-github {
   display: flex;
@@ -153,5 +161,84 @@ strong {
 }
 
 /* Projects */
+.projects {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: fit-content;
+  height: max-content;
+  border-radius: 24px;
+}
+@media screen and (max-width: 2000px) {
+  .figure {
+    border-radius: 20px;
+  }
+}
+.figure img {
+  box-shadow: var(--shadow);
+}
+.caption {
+  font-size: 14px;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  color: var(--black);
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+}
+.btn-live {
+  background-color: var(--blue-white);
+}
+.btn-code {
+  background-color: var(--green-white);
+}
+.btn:hover {
+  transform: scale(1.025);
+}
 
-/* Contact */
+.carousel {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: visible;
+  overflow-y: hidden;
+  padding: 40px;
+}
+
+.carousel:hover {
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}
+
+.carousel:focus-visible {
+  outline: none;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 2px;
+  display: inline-block;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: var(--white-grey);
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+}
