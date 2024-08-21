@@ -18,6 +18,8 @@
   --primary-hover: #217cf0;
   --primary-pressed: #0359e6;
   --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --btn-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 body {
@@ -78,19 +80,31 @@ strong {
 
 .header {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 0 20px;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 24px 0 24px;
 }
-
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .about {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 24px;
+}
+@media screen and (min-width: 1024px) {
+  .about {
+    flex-direction: row;
+  }
 }
 
 .description {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .title,
@@ -99,6 +113,16 @@ strong {
 .copy,
 .empty {
   width: 360px;
+}
+
+.header .contact {
+  display: flex;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 1024px) {
+  .header .contact {
+    justify-content: flex-end;
+  }
 }
 
 .title h3 {
@@ -131,31 +155,6 @@ strong {
   border-bottom-color: var(--black);
 }
 
-/* Nav */
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  height: 80px;
-  border-bottom: 1px solid var(--grey-1);
-}
-.avatar {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-.avatar-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
 .btn-github {
   display: flex;
   align-items: center;
@@ -166,6 +165,7 @@ strong {
   height: 40px;
   color: var(--white);
   background-color: var(--black);
+  box-shadow: var(--btn-shadow);
   transition: all 0.3s ease-out;
 }
 .btn-github:hover {
@@ -176,32 +176,27 @@ strong {
 .projects {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 24px;
 }
 .project {
   display: flex;
-  gap: 32px;
+  gap: 24px;
 }
 .figure {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   max-width: fit-content;
   height: max-content;
   border-radius: 24px;
 }
-@media screen and (max-width: 2000px) {
-  .figure {
-    border-radius: 20px;
-  }
-}
-.figure img {
-  box-shadow: var(--shadow);
+.project-grocery img {
+  border: 1px solid var(--white);
 }
 .btns {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 .btn {
   display: flex;
@@ -217,9 +212,10 @@ strong {
 .btn-live {
   color: var(--white);
   background-color: var(--black);
+  box-shadow: var(--btn-shadow);
 }
 .btn-code {
-  background-color: var(--yellow-white);
+  background-color: var(--white);
 }
 .btn:hover {
   transform: scale(1.03);
@@ -230,7 +226,7 @@ strong {
   white-space: nowrap;
   overflow-x: visible;
   overflow-y: hidden;
-  padding: 0 20px 80px 20px;
+  padding: 4px 24px 80px 24px;
 }
 
 .carousel:hover {
@@ -260,15 +256,31 @@ strong {
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 24px;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .footer-left {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 24px;
 }
-.copy p {
+@media screen and (min-width: 1024px) {
+  .footer-left {
+    flex-direction: row;
+  }
+}
+.footer .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.copyright {
   font-size: 12px;
-  font-weight: 500;
-  color: var(--grey-2);
 }
