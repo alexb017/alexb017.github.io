@@ -119,11 +119,11 @@ strong {
   display: flex;
   justify-content: flex-start;
 }
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .header .contact {
     justify-content: flex-end;
   }
-}
+} */
 
 .title h3 {
   font-size: 21.33px;
@@ -181,6 +181,8 @@ strong {
 .project {
   display: flex;
   gap: 24px;
+  padding: 24px;
+  border-radius: 24px;
 }
 .figure {
   display: flex;
@@ -190,9 +192,37 @@ strong {
   height: max-content;
   border-radius: 24px;
 }
+/* .figure img {
+  box-shadow: var(--shadow);
+} */
+.project-store {
+  background: linear-gradient(45deg, var(--blue-white), transparent 30%);
+}
+.project-note {
+  background: linear-gradient(45deg, var(--yellow-white), transparent 30%);
+}
+.project-grocery {
+  background: linear-gradient(45deg, var(--green-white), transparent 30%);
+}
 .project-grocery img {
   border: 1px solid var(--white);
 }
+
+.wide-figure,
+.wide-image {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .wide-figure,
+  .wide-image {
+    display: flex;
+  }
+
+  .small-image {
+    display: none;
+  }
+}
+
 .btns {
   display: flex;
   align-items: center;
@@ -212,7 +242,6 @@ strong {
 .btn-live {
   color: var(--white);
   background-color: var(--black);
-  box-shadow: var(--btn-shadow);
 }
 .btn-code {
   background-color: var(--white);
@@ -226,7 +255,7 @@ strong {
   white-space: nowrap;
   overflow-x: visible;
   overflow-y: hidden;
-  padding: 4px 24px 80px 24px;
+  padding: 0 24px 80px 24px;
 }
 
 .carousel:hover {
