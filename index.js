@@ -30,34 +30,3 @@ btnsClose.forEach((btn) => {
     }
   });
 });
-
-// Carousel
-const sliderCarousel = document.querySelector('.carousel');
-let mousePressedDown = false;
-let mouseStartX, scrollLeftPosition;
-
-let startDraggingOther = (event) => {
-  mousePressedDown = true;
-  mouseStartX = event.pageX - sliderCarousel.offsetLeft;
-  scrollLeftPosition = sliderCarousel.scrollLeft;
-};
-
-let stopDraggingOther = (event) => {
-  mousePressedDown = false;
-};
-
-sliderCarousel.addEventListener('mousemove', (event) => {
-  event.preventDefault();
-
-  if (!mousePressedDown) {
-    return;
-  }
-
-  const x = event.pageX - sliderCarousel.offsetLeft;
-  const scroll = x - mouseStartX;
-  sliderCarousel.scrollLeft = scrollLeftPosition - scroll;
-});
-
-sliderCarousel.addEventListener('mousedown', startDraggingOther, false);
-sliderCarousel.addEventListener('mouseup', stopDraggingOther, false);
-sliderCarousel.addEventListener('mouseleave', stopDraggingOther, false);
