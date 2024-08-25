@@ -11,44 +11,26 @@
   <body>
     <main class="main">
       <div class="content">
-        <header class="header">
-          <div class="about">
-            <div class="title">
-              <h3>Alex B.</h3>
-              <h3 class="opacity-05">Just my boring personal website.</h3>
-            </div>
-            <div class="description">
-              <p>
-                Hey, I'm Alex. I'm a fairly curious person. I enjoy creating
-                things, listening to music, and lately reading books.
-              </p>
-              <p>And I like black coffee.</p>
-              <p>
-                Here are a few things I've built so far that I'm pretty pleased
-                with.
-              </p>
-            </div>
-          </div>
-          <div class="contact">
-            <!-- <a
-              class="btn-github"
-              href="https://github.com/alexb017"
-              target="_blank"
-              >Github 🚀</a
-            > -->
-            <p>
-              It will be nice to hear from you! <br />
-              Say hi at
-              <a class="link" href="https://github.com/alexb017" target="_blank"
-                >github</a
-              >
-              or
-              <a class="link" href="mailto:alexbacirea@gmail.com"
-                >alexbacirea@gmail.com</a
-              >
-            </p>
-          </div>
+        <header class="header container">
+          <h4 class="title">
+            Hey 👋, I am Alex. I'm a fairly curious person. I enjoy creating
+            things, listening to music, and lately reading books.
+          </h4>
+          <p>And I like black coffee.</p>
+          <!-- <a
+            class="btn-email"
+            href="https://github.com/alexb017"
+            target="_blank"
+            >Copy my email</a
+          >
+          <p>
+            ...or view my work on
+            <a class="link" href="https://github.com/alexb017" target="_blank"
+              >github</a
+            >.
+          </p> -->
         </header>
+
         <section class="projects">
           <section class="projects-header container">
             <span class="subtitle">&bull; Little projects</span>
@@ -108,23 +90,29 @@
             </div>
           </section>
         </section>
+
         <section class="contact container">
           <p>It will be nice to hear from you!</p>
           <h4 class="title">
-            Say hi at
+            Say hi on
             <a class="link" href="https://github.com/alexb017" target="_blank"
               >github</a
             >
             or
-            <a class="link" href="mailto:alexbacirea@gmail.com"
-              >alexbacirea@gmail.com</a
-            >
+            <span class="link copy-email">copy my email address</span>
           </h4>
         </section>
+
         <footer class="footer container">
-          <p class="small-text">&copy; 2024 Alex B.</p>
+          <p class="small-text">
+            &copy; 2024 Alex. ✌️ <br />
+            Just my boring personal website.
+          </p>
         </footer>
       </div>
     </main>
+    <div class="email-popup hidden">
+      <p>✔️ Email coppied to clipboard!</p>
+    </div>
   </body>
 </html>

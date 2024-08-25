@@ -1,3 +1,17 @@
+const emailAddress = 'alexbacirea@gmail.com';
+
+const copyEmailBtn = document.querySelector('.copy-email');
+const popup = document.querySelector('.email-popup');
+
+copyEmailBtn.addEventListener('click', (event) => {
+  navigator.clipboard.writeText(emailAddress);
+
+  popup.classList.remove('hidden');
+  setTimeout(() => {
+    popup.classList.add('hidden');
+  }, 2000);
+});
+
 const btnsOpen = document.querySelectorAll('.card');
 const btnsClose = document.querySelectorAll('.btn-close');
 
