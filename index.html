@@ -12,126 +12,345 @@
     <main class="main">
       <div class="content">
         <header class="header container">
-          <h4 class="title">
-            Hey 👋, I am Alex. I'm a fairly curious person. I enjoy creating
-            things, listening to music, and lately reading books.
-          </h4>
-          <p>And I like black coffee.</p>
+          <div class="header-title">
+            <img
+              class="avatar"
+              src="./public/665bb5ce6f72699135d654.webp"
+              alt="avatar"
+            />
+            <h3 class="title">
+              Hey, I am Alex. <br />
+              <span>Just my boring personal website.</span>
+            </h3>
+          </div>
+          <p class="description">I'm a fairly curious person.</p>
+          <p class="description">
+            I enjoy creating things, listening to music, and lately reading
+            books.
+          </p>
+          <p class="description">And I like black coffee.</p>
         </header>
+
+        <section class="skills container">
+          <div class="skill">
+            <img
+              class="skill-icon"
+              src="./public/LogosReact.png"
+              alt="react logo"
+            />
+          </div>
+          <div class="skill">
+            <img
+              class="skill-icon"
+              src="./public/LogosTypescriptIconRound.png"
+              alt="typescript logo"
+            />
+          </div>
+          <div class="skill">
+            <img
+              class="skill-icon"
+              src="./public/LogosNextjsIcon.png"
+              alt="next js logo"
+            />
+          </div>
+          <div class="skill">
+            <img
+              class="skill-icon"
+              src="./public/LogosFirebase.png"
+              alt="firebase logo"
+            />
+          </div>
+          <div class="skill">
+            <img
+              class="skill-icon"
+              src="./public/LogosTailwindcssIcon.png"
+              alt="tailwind logo"
+            />
+          </div>
+        </section>
 
         <section class="projects">
           <section class="projects-header container">
-            <div class="skills">
-              <div class="skill">
-                <img
-                  class="skill-icon"
-                  src="./public/LogosReact.png"
-                  alt="react logo"
-                />
-              </div>
-              <div class="skill">
-                <img
-                  class="skill-icon"
-                  src="./public/LogosTypescriptIconRound.png"
-                  alt="typescript logo"
-                />
-              </div>
-              <div class="skill">
-                <img
-                  class="skill-icon"
-                  src="./public/LogosNextjsIcon.png"
-                  alt="next js logo"
-                />
-              </div>
-              <div class="skill">
-                <img
-                  class="skill-icon"
-                  src="./public/LogosFirebase.png"
-                  alt="firebase logo"
-                />
-              </div>
-              <div class="skill">
-                <img
-                  class="skill-icon"
-                  src="./public/LogosTailwindcssIcon.png"
-                  alt="tailwind logo"
-                />
-              </div>
-            </div>
-            <h4 class="title">
+            <spam class="subtitle">Little projects</spam>
+            <p class="description">
               Here are a few things I've built so far that I'm pretty pleased
               with.
-            </h4>
+            </p>
           </section>
           <section class="cards">
-            <div class="card card-store">
-              <div class="card-info">
-                <p class="card-title">
-                  Retro store <br />
-                  e-commerce app
-                </p>
-                <p class="small-text">
-                  build with react, next.js, firebase, and typescript
-                </p>
-                <p class="small-text">designed with tailwind and shadcn</p>
-              </div>
-            </div>
-            <div class="card card-note">
-              <div class="card-info">
-                <p class="card-title">A note-taking app</p>
-                <p class="small-text">build with react, next.js, firebase</p>
-                <p class="small-text">and typescript</p>
-                <p class="small-text">designed with tailwind and nextui</p>
-              </div>
-            </div>
-            <div class="card card-grocery">
-              <div class="card-info">
-                <p class="card-title">Shopping list</p>
-                <div class="checkboxes">
-                  <div class="checkbox">
-                    <input type="checkbox" id="checkbox-1" disabled checked />
-                    <label for="checkbox-1">apples</label>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" id="checkbox-2" disabled checked />
-                    <label for="checkbox-2">strawberries</label>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" id="checkbox-3" disabled />
-                    <label for="checkbox-3">orange</label>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" id="checkbox-4" disabled checked />
-                    <label for="checkbox-4">avocado</label>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" id="checkbox-4" disabled />
-                    <label for="checkbox-4">banana</label>
-                  </div>
+            <div class="cards-row">
+              <div class="card card-dental">
+                <div class="card-info">
+                  <p class="card-title">Dental Clinic 🦷</p>
+                  <p class="info">it's a work in progress</p>
+                  <p class="info">
+                    build with react, vite, firebase and typescript
+                  </p>
+                  <p class="info">designed with tailwind and shadcn</p>
                 </div>
-                <p class="small-text">build with react</p>
+                <div class="card-links">
+                  <a
+                    class="btn btn-code"
+                    href="https://github.com/alexb017/dental-clinic"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M16.443 7.328a.75.75 0 0 1 1.059-.056l1.737 1.564c.737.663 1.347 1.212 1.767 1.71c.44.525.754 1.088.754 1.784c0 .695-.313 1.258-.754 1.782c-.42.499-1.03 1.049-1.767 1.711l-1.737 1.564a.75.75 0 1 1-1.004-1.115l1.697-1.527c.788-.709 1.319-1.19 1.663-1.598c.33-.393.402-.622.402-.817c0-.196-.072-.425-.402-.818c-.344-.409-.875-.889-1.663-1.598l-1.697-1.527a.75.75 0 0 1-.056-1.06m-8.94 1.06a.75.75 0 0 0-1.004-1.115L4.761 8.836c-.737.663-1.347 1.212-1.767 1.71c-.44.525-.754 1.088-.754 1.784c0 .695.313 1.258.754 1.782c.42.499 1.03 1.049 1.767 1.711l1.737 1.564a.75.75 0 1 0 1.004-1.115l-1.697-1.527c-.788-.709-1.319-1.19-1.663-1.598c-.33-.393-.402-.622-.402-.817c0-.196.072-.425.402-.818c.344-.409.875-.889 1.663-1.598z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M14.182 4.276a.75.75 0 0 1 .53.918l-3.974 14.83a.75.75 0 1 1-1.449-.389l3.974-14.83a.75.75 0 0 1 .919-.53"
+                        opacity=".5"
+                      />
+                    </svg>
+                  </a>
+                  <a class="btn btn-live" href="https://" target="_blank">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          stroke-linejoin="round"
+                          d="m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99c0 .899-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823c-.295-.133-.295-.611-.295-1.57v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823"
+                        />
+                        <path
+                          d="m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333"
+                          opacity=".5"
+                        />
+                      </g>
+                    </svg>
+                    <span>Live</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card card-store">
+                <div class="card-info">
+                  <div class="card-info-figures">
+                    <figure class="figure">
+                      <img
+                        class="image"
+                        src="./public/images/Retro-Store-App-Dark.jpg"
+                        alt="retro-store-app"
+                      />
+                    </figure>
+                  </div>
+                  <p class="card-title">Fullstack e-commerce app 🛒</p>
+                  <!-- <p class="info">build with react, next.js, firebase</p>
+                  <p class="info">and typescript</p>
+                  <p class="info">designed with tailwind and shadcn</p> -->
+                </div>
+                <div class="card-links">
+                  <a
+                    class="btn btn-code"
+                    href="https://github.com/alexb017/retro-store-app"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M16.443 7.328a.75.75 0 0 1 1.059-.056l1.737 1.564c.737.663 1.347 1.212 1.767 1.71c.44.525.754 1.088.754 1.784c0 .695-.313 1.258-.754 1.782c-.42.499-1.03 1.049-1.767 1.711l-1.737 1.564a.75.75 0 1 1-1.004-1.115l1.697-1.527c.788-.709 1.319-1.19 1.663-1.598c.33-.393.402-.622.402-.817c0-.196-.072-.425-.402-.818c-.344-.409-.875-.889-1.663-1.598l-1.697-1.527a.75.75 0 0 1-.056-1.06m-8.94 1.06a.75.75 0 0 0-1.004-1.115L4.761 8.836c-.737.663-1.347 1.212-1.767 1.71c-.44.525-.754 1.088-.754 1.784c0 .695.313 1.258.754 1.782c.42.499 1.03 1.049 1.767 1.711l1.737 1.564a.75.75 0 1 0 1.004-1.115l-1.697-1.527c-.788-.709-1.319-1.19-1.663-1.598c-.33-.393-.402-.622-.402-.817c0-.196.072-.425.402-.818c.344-.409.875-.889 1.663-1.598z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M14.182 4.276a.75.75 0 0 1 .53.918l-3.974 14.83a.75.75 0 1 1-1.449-.389l3.974-14.83a.75.75 0 0 1 .919-.53"
+                        opacity=".5"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="btn btn-live"
+                    href="https://retro-store-app-alexb017s-projects.vercel.app"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          stroke-linejoin="round"
+                          d="m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99c0 .899-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823c-.295-.133-.295-.611-.295-1.57v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823"
+                        />
+                        <path
+                          d="m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333"
+                          opacity=".5"
+                        />
+                      </g>
+                    </svg>
+                    <span>Live</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card card-note">
+                <div class="card-info">
+                  <p class="card-title">Fullstack Note-taking app 📝</p>
+                  <p class="info">build with react, next.js, firebase</p>
+                  <p class="info">and typescript</p>
+                  <p class="info">designed with tailwind and nextui</p>
+                </div>
+                <div class="card-links">
+                  <a
+                    class="btn btn-code"
+                    href="https://github.com/alexb017/note-taking-app"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M16.443 7.328a.75.75 0 0 1 1.059-.056l1.737 1.564c.737.663 1.347 1.212 1.767 1.71c.44.525.754 1.088.754 1.784c0 .695-.313 1.258-.754 1.782c-.42.499-1.03 1.049-1.767 1.711l-1.737 1.564a.75.75 0 1 1-1.004-1.115l1.697-1.527c.788-.709 1.319-1.19 1.663-1.598c.33-.393.402-.622.402-.817c0-.196-.072-.425-.402-.818c-.344-.409-.875-.889-1.663-1.598l-1.697-1.527a.75.75 0 0 1-.056-1.06m-8.94 1.06a.75.75 0 0 0-1.004-1.115L4.761 8.836c-.737.663-1.347 1.212-1.767 1.71c-.44.525-.754 1.088-.754 1.784c0 .695.313 1.258.754 1.782c.42.499 1.03 1.049 1.767 1.711l1.737 1.564a.75.75 0 1 0 1.004-1.115l-1.697-1.527c-.788-.709-1.319-1.19-1.663-1.598c-.33-.393-.402-.622-.402-.817c0-.196.072-.425.402-.818c.344-.409.875-.889 1.663-1.598z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M14.182 4.276a.75.75 0 0 1 .53.918l-3.974 14.83a.75.75 0 1 1-1.449-.389l3.974-14.83a.75.75 0 0 1 .919-.53"
+                        opacity=".5"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="btn btn-live"
+                    href="https://note-taking-app-alexb017.vercel.app"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          stroke-linejoin="round"
+                          d="m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99c0 .899-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823c-.295-.133-.295-.611-.295-1.57v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823"
+                        />
+                        <path
+                          d="m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333"
+                          opacity=".5"
+                        />
+                      </g>
+                    </svg>
+                    <span>Live</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="cards-row">
+              <div class="card card-grocery">
+                <div class="card-info">
+                  <h1 class="grocery-title">Grocery <span>Store</span></h1>
+                  <p class="info">
+                    An online supermarket app build with react and stripe
+                    checkout integration.
+                  </p>
+                </div>
+                <div class="card-links">
+                  <a
+                    class="btn btn-code"
+                    href="https://github.com/alexb017/grocery-store"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M16.443 7.328a.75.75 0 0 1 1.059-.056l1.737 1.564c.737.663 1.347 1.212 1.767 1.71c.44.525.754 1.088.754 1.784c0 .695-.313 1.258-.754 1.782c-.42.499-1.03 1.049-1.767 1.711l-1.737 1.564a.75.75 0 1 1-1.004-1.115l1.697-1.527c.788-.709 1.319-1.19 1.663-1.598c.33-.393.402-.622.402-.817c0-.196-.072-.425-.402-.818c-.344-.409-.875-.889-1.663-1.598l-1.697-1.527a.75.75 0 0 1-.056-1.06m-8.94 1.06a.75.75 0 0 0-1.004-1.115L4.761 8.836c-.737.663-1.347 1.212-1.767 1.71c-.44.525-.754 1.088-.754 1.784c0 .695.313 1.258.754 1.782c.42.499 1.03 1.049 1.767 1.711l1.737 1.564a.75.75 0 1 0 1.004-1.115l-1.697-1.527c-.788-.709-1.319-1.19-1.663-1.598c-.33-.393-.402-.622-.402-.817c0-.196.072-.425.402-.818c.344-.409.875-.889 1.663-1.598z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M14.182 4.276a.75.75 0 0 1 .53.918l-3.974 14.83a.75.75 0 1 1-1.449-.389l3.974-14.83a.75.75 0 0 1 .919-.53"
+                        opacity=".5"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="btn btn-live"
+                    href="https://grocery-store-alexb017.vercel.app"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          stroke-linejoin="round"
+                          d="m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99c0 .899-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823c-.295-.133-.295-.611-.295-1.57v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823"
+                        />
+                        <path
+                          d="m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333"
+                          opacity=".5"
+                        />
+                      </g>
+                    </svg>
+                    <span>Live</span>
+                  </a>
+                </div>
               </div>
             </div>
           </section>
         </section>
 
         <section class="contact container">
-          <p>It will be nice to hear from you!</p>
-          <h4 class="title">
-            Say hi on
+          <spam class="subtitle">Get in touch</spam>
+          <p class="description">It will be nice to hear from you!</p>
+          <button class="btn-email" type="button">Copy my email address</button>
+          <p class="description">
+            ...or find me on
             <a class="link" href="https://github.com/alexb017" target="_blank"
-              >github</a
-            >
-            or
-            <span class="link copy-email">copy my email address</span>
-          </h4>
+              >Github</a
+            >.
+          </p>
         </section>
 
         <footer class="footer container">
-          <p class="small-text">
-            &copy; 2024 Alex. ✌️ <br />
-            Just my boring personal website.
-          </p>
+          <p class="info">&copy; 2024 Alex ✌️</p>
         </footer>
       </div>
     </main>
