@@ -76,7 +76,7 @@ strong {
   display: inline-block;
   text-decoration: underline;
   cursor: pointer;
-  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 200ms ease-in-out;
 }
 
 .link:hover {
@@ -196,19 +196,15 @@ strong {
 
 .cards {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.cards-row {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 @media screen and (min-width: 768px) {
-  .cards-row {
-    flex-direction: row;
+  .cards {
+    justify-content: flex-start;
+    width: 450px;
   }
 }
 
@@ -306,11 +302,11 @@ strong {
   gap: 4px;
   font-size: 14px;
   color: var(--grey-2);
-  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 200ms ease-in-out;
 }
 
 .btn svg {
-  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 200ms ease-in-out;
 }
 
 .btn:hover svg {
@@ -343,13 +339,13 @@ strong {
   padding: 12px 20px;
   border-radius: 100px;
   background-color: var(--black);
-  color: var(--grey-1);
+  color: var(--white);
   cursor: pointer;
-  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 200ms ease-in-out;
 }
 
 .btn-email:hover {
-  background-color: var(--grey-3);
+  background-color: var(--primary);
 }
 
 .email-popup {
@@ -368,7 +364,7 @@ strong {
   z-index: 1000;
   background-color: var(--grey-3);
   box-shadow: var(--shadow-card);
-  animation: emailFadeIn 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: email-fade-in 400ms ease-in-out;
 }
 
 .hidden {
@@ -376,27 +372,46 @@ strong {
 }
 
 .email-popup.fade-out {
-  animation: emailFadeOut 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: email-fade-out 400ms ease-in-out;
 }
 
-@keyframes emailFadeIn {
+@keyframes email-fade-in {
   0% {
     opacity: 0;
-    transform: translate(-50%, 20px);
+    transform: translateX(-50%) scale(0.95);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) scale(1);
   }
 }
 
-@keyframes emailFadeOut {
+@keyframes email-fade-out {
   0% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, 20px);
+    transform: translateX(-50%) scale(0.95);
+  }
+}
+
+.slide-enter {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  animation: slide-enter 1s ease-in forwards;
+}
+
+@keyframes slide-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

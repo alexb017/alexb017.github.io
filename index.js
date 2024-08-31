@@ -24,6 +24,14 @@ copyEmailBtn.addEventListener('click', (event) => {
   }, 2000);
 });
 
+const slideElements = document.querySelectorAll('.slide-enter');
+
+slideElements.forEach((element, index) => {
+  setTimeout(() => {
+    element.classList.add('slide-enter-active');
+  }, index * 200);
+});
+
 // const btnsOpen = document.querySelectorAll('.card');
 // const btnsClose = document.querySelectorAll('.btn-close');
 
