@@ -74,13 +74,14 @@ strong {
 
 .link {
   display: inline-block;
+  color: var(--grey-1);
   text-decoration: underline;
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 
 .link:hover {
-  color: var(--primary);
+  color: var(--white);
 }
 
 .main {
@@ -171,6 +172,7 @@ strong {
 .skills {
   display: flex;
   align-items: center;
+  background-color: var(--black-0);
 }
 
 .skill {
@@ -178,7 +180,7 @@ strong {
   height: 40px;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background-color: var(--white-opacity-01);
+  background-color: var(--black-opacity-01);
   border-radius: 50%;
   padding: 4px;
 }
@@ -302,11 +304,11 @@ strong {
   gap: 4px;
   font-size: 14px;
   color: var(--grey-2);
-  transition: all 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }
 
 .btn svg {
-  transition: all 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
 .btn:hover svg {
@@ -317,7 +319,7 @@ strong {
   color: var(--primary);
 }
 
-.btn-live:hover {
+.btn-live:hover svg {
   color: var(--red);
 }
 
@@ -338,14 +340,14 @@ strong {
   gap: 10px;
   padding: 12px 20px;
   border-radius: 100px;
-  background-color: var(--black);
+  background-color: var(--primary);
   color: var(--white);
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 
 .btn-email:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-hover);
 }
 
 .email-popup {
