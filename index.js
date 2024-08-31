@@ -1,63 +1,66 @@
-const btnsOpen = document.querySelectorAll('.card');
-const btnsClose = document.querySelectorAll('.btn-close');
+const emailAddress = 'alexbacirea@gmail.com';
 
-btnsOpen.forEach((btn) => {
-  btn.addEventListener('click', (event) => {
-    if (event.currentTarget.classList.contains('card')) {
-      const selector = event.currentTarget.dataset.dialog;
-      const dialog = document.getElementById(selector);
-      document.body.style.overflow = 'hidden';
-      dialog.showModal();
-    }
-  });
+const copyEmailBtn = document.querySelector('.btn-email');
+const popup = document.querySelector('.email-popup');
+
+copyEmailBtn.addEventListener('click', (event) => {
+  navigator.clipboard.writeText(emailAddress);
+
+  // Remove fade-out class before showing the popup
+  popup.classList.remove('fade-out');
+  popup.classList.remove('hidden');
+
+  setTimeout(() => {
+    popup.classList.add('fade-out');
+
+    // Wait for the animation to finish before hiding the popup
+    popup.addEventListener(
+      'animationend',
+      () => {
+        popup.classList.add('hidden');
+      },
+      { once: true }
+    );
+  }, 2000);
 });
 
-btnsClose.forEach((btn) => {
-  btn.addEventListener('click', (event) => {
-    if (event.currentTarget.classList.contains('btn-close')) {
-      const selector = event.currentTarget.dataset.close;
-      const dialog = document.getElementById(selector);
-      dialog.setAttribute('closing', '');
-      dialog.addEventListener(
-        'animationend',
-        () => {
-          dialog.removeAttribute('closing');
-          document.body.style.overflow = 'auto';
-          dialog.close();
-        },
-        { once: true }
-      );
-    }
-  });
+const slideElements = document.querySelectorAll('.slide-enter');
+
+slideElements.forEach((element, index) => {
+  setTimeout(() => {
+    element.classList.add('slide-enter-active');
+  }, index * 200);
 });
 
-// Carousel
-const sliderCarousel = document.querySelector('.carousel');
-let mousePressedDown = false;
-let mouseStartX, scrollLeftPosition;
+// const btnsOpen = document.querySelectorAll('.card');
+// const btnsClose = document.querySelectorAll('.btn-close');
 
-let startDraggingOther = (event) => {
-  mousePressedDown = true;
-  mouseStartX = event.pageX - sliderCarousel.offsetLeft;
-  scrollLeftPosition = sliderCarousel.scrollLeft;
-};
+// btnsOpen.forEach((btn) => {
+//   btn.addEventListener('click', (event) => {
+//     if (event.currentTarget.classList.contains('card')) {
+//       const selector = event.currentTarget.dataset.dialog;
+//       const dialog = document.getElementById(selector);
+//       document.body.style.overflow = 'hidden';
+//       dialog.showModal();
+//     }
+//   });
+// });
 
-let stopDraggingOther = (event) => {
-  mousePressedDown = false;
-};
-
-sliderCarousel.addEventListener('mousemove', (event) => {
-  event.preventDefault();
-
-  if (!mousePressedDown) {
-    return;
-  }
-
-  const x = event.pageX - sliderCarousel.offsetLeft;
-  const scroll = x - mouseStartX;
-  sliderCarousel.scrollLeft = scrollLeftPosition - scroll;
-});
-
-sliderCarousel.addEventListener('mousedown', startDraggingOther, false);
-sliderCarousel.addEventListener('mouseup', stopDraggingOther, false);
-sliderCarousel.addEventListener('mouseleave', stopDraggingOther, false);
+// btnsClose.forEach((btn) => {
+//   btn.addEventListener('click', (event) => {
+//     if (event.currentTarget.classList.contains('btn-close')) {
+//       const selector = event.currentTarget.dataset.close;
+//       const dialog = document.getElementById(selector);
+//       dialog.setAttribute('closing', '');
+//       dialog.addEventListener(
+//         'animationend',
+//         () => {
+//           dialog.removeAttribute('closing');
+//           document.body.style.overflow = 'auto';
+//           dialog.close();
+//         },
+//         { once: true }
+//       );
+//     }
+//   });
+// });
