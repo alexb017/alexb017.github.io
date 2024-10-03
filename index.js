@@ -1,28 +1,21 @@
-// const emailAddress = 'alexbacirea@gmail.com';
+const emailAddress = 'alexbacirea@gmail.com';
 
-// const copyEmailBtn = document.querySelector('.btn-email');
-// const popup = document.querySelector('.email-popup');
+const copyEmailBtn = document.querySelector('.btn-email');
 
-// copyEmailBtn.addEventListener('click', (event) => {
-//   navigator.clipboard.writeText(emailAddress);
+copyEmailBtn.addEventListener('click', (event) => {
+  const originalText = copyEmailBtn.textContent.trim();
+  console.log(originalText);
+  copyEmailBtn.childNodes[copyEmailBtn.childNodes.length - 1].textContent =
+    'Copied...';
 
-//   // Remove fade-out class before showing the popup
-//   popup.classList.remove('fade-out');
-//   popup.classList.remove('hidden');
-
-//   setTimeout(() => {
-//     popup.classList.add('fade-out');
-
-//     // Wait for the animation to finish before hiding the popup
-//     popup.addEventListener(
-//       'animationend',
-//       () => {
-//         popup.classList.add('hidden');
-//       },
-//       { once: true }
-//     );
-//   }, 2000);
-// });
+  setTimeout(() => {
+    navigator.clipboard.writeText(emailAddress).then(() => {
+      copyEmailBtn.childNodes[
+        copyEmailBtn.childNodes.length - 1
+      ].textContent = ` ${originalText}`;
+    });
+  }, 1000);
+});
 
 // const slideElements = document.querySelectorAll('.slide-enter');
 
