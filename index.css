@@ -76,10 +76,15 @@ small {
 
 .content {
   display: flex;
-  gap: 48px;
   width: 100%;
   max-width: 1080px;
   padding: 80px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    gap: 48px;
+  }
 }
 
 .left {
@@ -87,14 +92,25 @@ small {
   flex-direction: column;
   gap: 48px;
   width: 100%;
-  max-width: 280px;
+}
+
+@media screen and (min-width: 768px) {
+  .left {
+    max-width: 280px;
+  }
 }
 
 .right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .header {
@@ -166,7 +182,12 @@ small {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  transform: translateX(-16px);
+}
+
+@media screen and (min-width: 768px) {
+  .tabs {
+    transform: translateX(-16px);
+  }
 }
 
 .tab {
@@ -177,14 +198,24 @@ small {
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease-in;
+  padding-left: 0;
 }
 
-.tab.active {
-  background-color: var(--gray-light);
-}
+@media screen and (min-width: 768px) {
+  .tab {
+    padding-left: 16px;
+  }
+  .tab-mobile {
+    display: none;
+  }
 
-.tab:hover {
-  background-color: var(--gray-light);
+  .tab.active {
+    background-color: var(--gray-light);
+  }
+
+  .tab:hover {
+    background-color: var(--gray-light);
+  }
 }
 
 .tab-content {
@@ -216,15 +247,28 @@ small {
 
 .tab-content-info {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .tab-content-info {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .project-info {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 160px;
+}
+
+@media screen and (min-width: 768px) {
+  .project-info {
+    width: 160px;
+  }
 }
 
 .project-info p {
