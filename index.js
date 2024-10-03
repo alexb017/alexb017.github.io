@@ -6,7 +6,7 @@ copyEmailBtn.addEventListener('click', (event) => {
   const originalText = copyEmailBtn.textContent.trim();
   console.log(originalText);
   copyEmailBtn.childNodes[copyEmailBtn.childNodes.length - 1].textContent =
-    'Copied...';
+    'Copied!';
 
   setTimeout(() => {
     navigator.clipboard.writeText(emailAddress).then(() => {
@@ -17,13 +17,13 @@ copyEmailBtn.addEventListener('click', (event) => {
   }, 1000);
 });
 
-// const slideElements = document.querySelectorAll('.slide-enter');
+const slideElements = document.querySelectorAll('.slide-enter');
 
-// slideElements.forEach((element, index) => {
-//   setTimeout(() => {
-//     element.classList.add('slide-enter-active');
-//   }, index * 200);
-// });
+slideElements.forEach((element, index) => {
+  setTimeout(() => {
+    element.classList.add('slide-enter-active');
+  }, index * 200);
+});
 
 const tabs = document.querySelectorAll('.tab');
 
