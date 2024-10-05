@@ -123,15 +123,6 @@ small {
 .avatar {
   width: 24px;
   height: 24px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.avatar-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .header-content {
@@ -139,6 +130,10 @@ small {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+}
+
+.header-title p:first-child {
+  font-weight: 600;
 }
 
 .header-title p:last-child {
@@ -346,9 +341,11 @@ small {
   0% {
     opacity: 0;
     transform: translateY(10px);
+    filter: blur(10px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
