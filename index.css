@@ -3,14 +3,22 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --grey: #e5e5e5;
+  --grey-hover: #d4d4d4;
+  --primary: #1467e9;
+  --primary-hover: #217cf0;
+  --primary-pressed: #0359e6;
+  --shadow-btn: 0px 13px 27px -5px rgba(0, 0, 0, 0.15),
+    0px 8px 16px -8px rgba(0, 0, 0, 0.3);
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   color: var(--black);
   font-weight: 400;
+  background-color: var(--white);
 }
 
 * {
@@ -46,6 +54,98 @@ strong {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatar {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: -1px;
+  background-color: var(--black);
+  transform: rotate(-3deg);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.info {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--primary);
+  transition: color 0.2s ease-in;
+}
+
+.link:hover {
+  color: var(--primary-hover);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 100px;
+  background-color: var(--grey);
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.btn svg {
+  opacity: 0.5;
+}
+
+.btn:hover {
+  background-color: var(--grey-hover);
+}
+
+.project-text span {
+  opacity: 0.5;
+}
+
 /* Animation slide in */
 .hidden {
   display: none;
@@ -60,12 +160,12 @@ strong {
 }
 
 @keyframes slide-enter {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(10px);
-    filter: blur(10px);
+    transform: translateY(8px);
+    filter: blur(4px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
