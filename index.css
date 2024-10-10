@@ -3,13 +3,15 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --grey: #e5e5e5;
-  --grey-hover: #d4d4d4;
+  --grey: #f5f5f5;
+  --grey-hover: #e5e5e5;
   --primary: #1467e9;
   --primary-hover: #217cf0;
   --primary-pressed: #0359e6;
-  --shadow-btn: 0px 13px 27px -5px rgba(0, 0, 0, 0.15),
-    0px 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --btn-next: rgba(0, 0, 0, 0.25) 0px 2px 25px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  --btn-prev: rgba(0, 0, 0, 0.3) 0px 15px 30px -10px inset;
+  --btn-prev-hover: rgba(0, 0, 0, 0.5) 0px 20px 35px -15px inset;
 }
 
 body {
@@ -57,13 +59,13 @@ strong {
 .main {
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 80px;
   width: 100%;
   max-width: 380px;
   padding: 20px;
@@ -127,7 +129,7 @@ strong {
   gap: 6px;
   height: 36px;
   padding: 0 12px;
-  border-radius: 100px;
+  border-radius: 12px;
   background-color: var(--grey);
   color: var(--black);
   cursor: pointer;
@@ -143,6 +145,72 @@ strong {
 }
 
 .project-text span {
+  opacity: 0.5;
+}
+
+/* Prev-Next Btns */
+.prev-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.prev-next-other {
+  margin-bottom: -16px;
+  margin-left: 16px;
+  opacity: 0.5;
+}
+
+.btn-next-end {
+  align-self: flex-end;
+  width: 58.333333%;
+  z-index: 1;
+  margin-bottom: -8px;
+}
+
+.btn-prev-next {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  width: 58.333333%;
+  background-color: var(--white);
+  transition: all 0.2s ease-in;
+}
+
+.btn-next {
+  width: 100%;
+  justify-content: flex-end;
+  box-shadow: var(--btn-next);
+}
+
+.btn-next:hover {
+  background-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-prev {
+  justify-content: flex-start;
+  box-shadow: var(--btn-prev);
+}
+
+.btn-prev span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease-in;
+}
+
+.btn-prev:hover {
+  background-color: var(--white);
+  box-shadow: var(--btn-prev-hover);
+}
+
+.btn-prev:hover span {
+  transform: translateY(2px);
+}
+
+.footer p {
+  font-size: 12px;
   opacity: 0.5;
 }
 
