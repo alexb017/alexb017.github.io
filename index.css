@@ -8,10 +8,10 @@
   --primary: #1467e9;
   --primary-hover: #217cf0;
   --primary-pressed: #0359e6;
-  --btn-next: rgba(0, 0, 0, 0.25) 0px 2px 25px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  --btn-prev: rgba(0, 0, 0, 0.3) 0px 15px 30px -10px inset;
-  --btn-prev-hover: rgba(0, 0, 0, 0.5) 0px 20px 35px -15px inset;
+  --btn-next: 0px 5px 25px -5px rgba(0, 0, 0, 0.25),
+    0px 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --btn-prev: 0px 10px 40px -10px rgba(0, 0, 0, 0.3) inset;
+  --btn-prev-hover: 0px 20px 35px -15px rgba(0, 0, 0, 0.5) inset;
 }
 
 body {
@@ -65,7 +65,7 @@ strong {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 80px;
+  gap: 50px;
   width: 100%;
   max-width: 380px;
   padding: 20px;
@@ -75,7 +75,7 @@ strong {
 .header {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .avatar {
@@ -110,11 +110,16 @@ strong {
   gap: 8px;
 }
 
+.contact p span {
+  font-weight: 600;
+}
+
 .link {
   display: inline-flex;
   align-items: center;
   gap: 2px;
   color: var(--primary);
+  font-weight: 600;
   transition: color 0.2s ease-in;
 }
 
@@ -127,9 +132,9 @@ strong {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: 36px;
+  height: 40px;
   padding: 0 12px;
-  border-radius: 12px;
+  border-radius: 100px;
   background-color: var(--grey);
   color: var(--black);
   cursor: pointer;
@@ -144,8 +149,10 @@ strong {
   background-color: var(--grey-hover);
 }
 
-.project-text span {
-  opacity: 0.5;
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* Prev-Next Btns */
@@ -156,8 +163,15 @@ strong {
 }
 
 .prev-next-other {
-  margin-bottom: -16px;
-  margin-left: 16px;
+  margin-bottom: -20px;
+  margin-left: 20px;
+}
+
+.project-text span {
+  font-weight: 600;
+}
+
+.prev-next-other p {
   opacity: 0.5;
 }
 
@@ -173,6 +187,7 @@ strong {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   width: 58.333333%;
+  height: 44px;
   background-color: var(--white);
   transition: all 0.2s ease-in;
 }
@@ -190,7 +205,7 @@ strong {
 
 .btn-prev {
   justify-content: flex-start;
-  box-shadow: var(--btn-prev);
+  background-color: var(--grey);
 }
 
 .btn-prev span {
@@ -202,7 +217,7 @@ strong {
 
 .btn-prev:hover {
   background-color: var(--white);
-  box-shadow: var(--btn-prev-hover);
+  box-shadow: var(--btn-prev);
 }
 
 .btn-prev:hover span {
