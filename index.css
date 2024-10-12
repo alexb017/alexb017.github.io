@@ -3,11 +3,10 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --black-hover: #333333;
   --grey: #f5f5f5;
   --grey-hover: #e5e5e5;
-  --primary: #1467e9;
-  --primary-hover: #217cf0;
-  --primary-pressed: #0359e6;
+  --blue: #3b82f6;
   --btn-next: 0px 5px 25px -5px rgba(0, 0, 0, 0.25),
     0px 8px 16px -8px rgba(0, 0, 0, 0.3);
   --btn-prev: 0px 10px 40px -10px rgba(0, 0, 0, 0.3) inset;
@@ -59,17 +58,17 @@ strong {
 .main {
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 50px;
+  gap: 48px;
   width: 100%;
-  max-width: 380px;
-  padding: 20px;
-  padding-top: 80px;
+  max-width: 400px;
+  padding: 80px 20px;
 }
 
 .header {
@@ -78,18 +77,24 @@ strong {
   gap: 16px;
 }
 
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .avatar {
   display: none;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  color: var(--white);
-  font-weight: 600;
-  letter-spacing: -1px;
-  background-color: var(--black);
-  transform: rotate(-3deg);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .title {
@@ -103,6 +108,10 @@ strong {
   letter-spacing: -0.5px;
 }
 
+.info span {
+  font-weight: 600;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -110,21 +119,16 @@ strong {
   gap: 8px;
 }
 
-.contact p span {
-  font-weight: 600;
-}
-
 .link {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  color: var(--primary);
-  font-weight: 600;
-  transition: color 0.2s ease-in;
+  color: var(--blue);
+  transition: all 0.2s ease-in;
 }
 
 .link:hover {
-  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
 .btn {
@@ -133,7 +137,7 @@ strong {
   justify-content: center;
   gap: 6px;
   height: 40px;
-  padding: 0 12px;
+  padding: 0 16px;
   border-radius: 100px;
   background-color: var(--grey);
   color: var(--black);
@@ -141,18 +145,31 @@ strong {
   transition: all 0.2s ease-in;
 }
 
-.btn svg {
+.btn:hover {
+  background-color: var(--grey-hover);
+}
+
+.btn span {
+  font-size: 12px;
   opacity: 0.5;
 }
 
-.btn:hover {
-  background-color: var(--grey-hover);
+@media screen and (min-width: 1600px) {
+  .btn span {
+    margin-top: 1px;
+  }
 }
 
 .projects {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
+}
+
+.others {
+  font-size: 12px;
+  margin-right: 25%;
 }
 
 /* Prev-Next Btns */
@@ -165,10 +182,6 @@ strong {
 .prev-next-other {
   margin-bottom: -20px;
   margin-left: 20px;
-}
-
-.project-text span {
-  font-weight: 600;
 }
 
 .prev-next-other p {
