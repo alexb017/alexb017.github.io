@@ -3,23 +3,27 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --black-hover: #333333;
-  --grey: #f5f5f5;
-  --grey-hover: #e5e5e5;
-  --blue: #3b82f6;
-  --btn-next: 0px 5px 25px -5px rgba(0, 0, 0, 0.25),
+  --dark-black: #151515;
+  --darker-grey: #333337;
+  --dark-grey: #6a6a6e;
+  --grey: #b4b4b8;
+  --light-grey: #dedfe3;
+  --lighter-grey: #eeeef2;
+  --more-white: #f9f9fd;
+  --blue: #0070f3;
+  --sky: #3b82f6;
+  --shadow: 0px 13px 27px -5px rgba(0, 0, 0, 0.25),
     0px 8px 16px -8px rgba(0, 0, 0, 0.3);
-  --btn-prev: 0px 10px 40px -10px rgba(0, 0, 0, 0.3) inset;
-  --btn-prev-hover: 0px 20px 35px -15px rgba(0, 0, 0, 0.5) inset;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.4;
-  color: var(--black);
+  line-height: 1.2;
+  color: var(--white);
   font-weight: 400;
-  background-color: var(--white);
+  letter-spacing: -0.5px;
+  background-color: var(--black);
 }
 
 * {
@@ -34,7 +38,7 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -48,7 +52,7 @@ button {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 * {
@@ -57,147 +61,255 @@ strong {
 
 .main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 100vh;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 48px;
+@media screen and (max-width: 844px) and (orientation: landscape) {
+  .main {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    flex-direction: row;
+  }
+}
+
+.left {
   width: 100%;
-  max-width: 400px;
-  padding: 80px 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .left {
+    width: 50%;
+  }
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
+  padding: 20px;
 }
 
-.bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.avatar {
-  display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.title {
+h1 {
   font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
-.info {
-  font-size: 18px;
-  letter-spacing: -0.5px;
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 28px;
+    padding-right: 25%;
+  }
 }
 
-.info span {
-  font-weight: 600;
+/* @media screen and (min-width: 1600px) {
+  h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+} */
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  gap: 16px;
 }
 
-.link {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  color: var(--blue);
-  transition: all 0.2s ease-in;
+/* Right side */
+
+.right {
+  width: 100%;
+  overflow-y: scroll;
 }
 
-.link:hover {
-  text-decoration: underline;
+@media screen and (min-width: 1280px) {
+  .right {
+    width: 50%;
+  }
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
+  gap: 8px;
+  width: fit-content;
   height: 40px;
-  padding: 0 16px;
+  padding: 0px 16px;
+  line-height: 1;
+  background-color: var(--darker-grey);
   border-radius: 100px;
-  background-color: var(--grey);
-  color: var(--black);
+  box-shadow: var(--shadow);
   cursor: pointer;
   transition: all 0.2s ease-in;
 }
 
 .btn:hover {
-  background-color: var(--grey-hover);
+  background-color: var(--dark-black);
 }
 
-.btn span {
-  font-size: 12px;
-  opacity: 0.5;
+/* Dialog */
+
+dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
 }
 
-@media screen and (min-width: 1600px) {
-  .btn span {
-    margin-top: 1px;
+dialog[open] {
+  display: flex;
+  color: var(--white);
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+}
+
+.dialog-left {
+  width: 0%;
+}
+
+@media screen and (min-width: 1280px) {
+  .dialog-left {
+    width: 33.333333%;
   }
 }
 
-.projects {
+.dialog-right {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .dialog-right {
+    width: 66.666667%;
+  }
+}
+
+@media screen and (max-width: 844px) and (orientation: landscape) {
+  .dialog-right {
+    justify-content: flex-start;
+  }
+}
+
+.dialog-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 640px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.dialog-right-content-features {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
-.others {
-  font-size: 12px;
+ul {
+  list-style: none;
 }
 
-.footer p {
-  font-size: 12px;
-  opacity: 0.5;
+.dialog-right-content-links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dialog-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: var(--darker-grey);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  margin-top: 16px;
+}
+
+.dialog-close-button:hover {
+  background-color: var(--dark-black);
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--darker-grey);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--dark-black);
 }
 
 /* Animation slide in */
-.hidden {
-  display: none;
-}
-
-.slide-enter {
+.fade-in {
   opacity: 0;
 }
 
-.slide-enter-active {
-  animation: slide-enter 1s ease-in forwards;
+.fade-in-active {
+  animation: fade-in 500ms ease-in forwards;
 }
 
-@keyframes slide-enter {
+@keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
     filter: blur(4px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    filter: blur(0px);
   }
 }
