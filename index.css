@@ -11,7 +11,8 @@
   --gray-500: #6b7280;
   --blue: #1e90ff;
   --green: #32cd32;
-  --btn-live-bg: rgba(0, 0, 0, 0.15);
+  --btn-live-bg-black: rgba(0, 0, 0, 0.15);
+  --btn-live-bg-white: rgba(255, 255, 255, 0.15);
   --btn-live-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
     0px 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -19,7 +20,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--black);
   font-weight: 400;
@@ -60,9 +61,15 @@ strong {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 300;
   line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 small {
@@ -83,9 +90,9 @@ small span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 64px;
+  gap: 128px;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   padding: 0 20px;
 }
 
@@ -99,6 +106,12 @@ small span {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 32px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -142,16 +155,55 @@ small span {
   backface-visibility: hidden;
 }
 
-.project-retro .figure:nth-child(1) {
+.project-dental .figure:nth-child(1) {
   margin-right: 50%;
   transform: rotate(-4deg);
   z-index: 1;
 }
-.project-retro .figure:nth-child(2) {
+.project-dental .figure:nth-child(2) {
   margin-top: -91.666667%;
   margin-right: 8.333333%;
   margin-left: 41.666667%;
   transform: rotate(4deg);
+}
+
+.project-note .figure:nth-child(1) {
+  margin-right: 41.666667%;
+  margin-left: 8.333333%;
+  transform: rotate(3deg);
+}
+
+.project-note .figure:nth-child(2) {
+  position: absolute;
+  top: 83.333333%;
+  margin-left: 33.333333%;
+  transform: translateY(-83.333333%) rotate(-3deg);
+}
+
+.project-retro .figure:nth-child(1) {
+  margin-right: 8.333333%;
+  margin-left: 41.666667%;
+  transform: rotate(-2deg);
+}
+
+.project-retro .figure:nth-child(2) {
+  margin-top: -91.666667%;
+  margin-right: 50%;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+
+.project-grocery .figure:nth-child(1) {
+  margin-right: 50%;
+  transform: rotate(-3deg);
+  z-index: 1;
+}
+
+.project-grocery .figure:nth-child(2) {
+  margin-top: -91.666667%;
+  margin-right: 8.333333%;
+  margin-left: 41.666667%;
+  transform: rotate(3deg);
 }
 
 .btn-live {
@@ -166,12 +218,12 @@ small span {
   border-radius: 100px;
   padding: 12px 24px;
   color: var(--white);
-  background-color: var(--btn-live-bg);
+  background-color: var(--btn-live-bg-black);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
-  z-index: 2;
   will-change: transform;
+  width: max-content;
   transition: all 200ms ease-in-out;
 }
 
