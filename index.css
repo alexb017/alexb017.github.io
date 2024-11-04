@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
   --black: #000000;
@@ -11,6 +12,9 @@
   --gray-500: #6b7280;
   --blue: #1e90ff;
   --green: #32cd32;
+  --logo: #3ffd6a;
+  --email: #f2e7d1;
+  --github: #181717;
   --btn-live-bg-black: rgba(0, 0, 0, 0.15);
   --btn-live-bg-white: rgba(255, 255, 255, 0.15);
   --btn-live-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -75,6 +79,7 @@ h2 {
 small {
   font-size: 12px;
   color: var(--gray-400);
+  font-family: 'Roboto Mono', monospace;
 }
 
 small span {
@@ -90,10 +95,12 @@ small span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 128px;
+  gap: 180px;
   width: 100%;
   max-width: 500px;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .row {
@@ -115,25 +122,19 @@ small span {
   gap: 20px;
 }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  color: var(--white);
-  font-weight: 600;
-  background-color: var(--gray-300);
-}
-
 .subtitle {
   color: var(--gray-400);
 }
 
 .subtitle span {
   color: var(--green);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 100px;
+  background-color: var(--gray-100);
 }
 
 .project-images {
@@ -152,6 +153,7 @@ small span {
   display: block;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -206,13 +208,20 @@ small span {
   transform: rotate(3deg);
 }
 
+.project-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .btn-live {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 6px;
   border-radius: 100px;
@@ -234,14 +243,131 @@ small span {
 .link {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   padding: 4px 8px;
   border-radius: 8px;
   color: var(--black);
   background-color: transparent;
+  transform: translateX(-8px);
   transition: all 200ms ease-in-out;
 }
 
 .link:hover {
   background-color: var(--gray-100);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 40px;
+  z-index: 999;
+  background-image: linear-gradient(
+    to top,
+    rgba(249, 250, 251, 0),
+    rgba(249, 250, 251, 1) 33.333333%
+  );
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    top: 50%;
+    left: 32px;
+    transform: translateY(-50%);
+    width: 40px;
+    padding: 0;
+    background-image: none;
+  }
+}
+
+.nav-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    width: 40px;
+    height: auto;
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  background-color: var(--logo);
+  border-radius: 12px;
+  box-shadow: var(--btn-live-shadow);
+  border: 1px solid var(--gray-200);
+  transform: rotate(-10deg);
+  cursor: default;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  will-change: transform;
+  box-shadow: var(--btn-live-shadow);
+  transition: all 200ms ease-in-out;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.nav-item-github {
+  color: var(--white);
+  background-color: var(--github);
+}
+
+.nav-item-email {
+  color: var(--black);
+  background-color: var(--email);
+}
+
+.copyright {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  display: flex;
+}
+
+.just {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+}
+
+.bar-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 888;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(249, 250, 251, 0),
+    rgba(249, 250, 251, 1)
+  );
 }
