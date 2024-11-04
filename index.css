@@ -277,16 +277,15 @@ small span {
 
 .nav {
   position: fixed;
-  top: 20px;
+  top: 50%;
   left: 20px;
+  transform: translateY(-50%);
   z-index: 999;
 }
 
 @media screen and (min-width: 768px) {
   .nav {
-    top: 50%;
     left: 32px;
-    transform: translateY(-50%);
   }
 }
 
