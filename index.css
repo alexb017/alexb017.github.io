@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
+  --white: #ffffff;
   --black: #000000;
   --white: #ffffff;
   --gray-50: #f9fafb;
@@ -43,7 +44,7 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -137,8 +138,16 @@ small span {
   background-color: var(--gray-100);
 }
 
-.project-images {
-  position: relative;
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -208,7 +217,8 @@ small span {
   transform: rotate(3deg);
 }
 
-.project-info {
+.dialog-right {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
