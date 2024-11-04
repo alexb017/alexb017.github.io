@@ -66,15 +66,27 @@ strong {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 1.2;
 }
 
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
 h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
 }
 
 small {
@@ -100,8 +112,13 @@ small span {
   width: 100%;
   max-width: 500px;
   padding: 0 20px;
-  position: relative;
-  z-index: 1;
+  padding-left: 76px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    padding-left: 20px;
+  }
 }
 
 .row {
@@ -127,10 +144,6 @@ small span {
   color: var(--gray-400);
 }
 
-.subtitle span {
-  color: var(--green);
-}
-
 .badge {
   display: inline-block;
   padding: 4px 8px;
@@ -144,15 +157,8 @@ small span {
   height: auto;
 }
 
-.btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
 .figure {
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -178,6 +184,10 @@ small span {
   transform: rotate(4deg);
 }
 
+.project-note {
+  position: relative;
+}
+
 .project-note .figure:nth-child(1) {
   margin-right: 41.666667%;
   margin-left: 8.333333%;
@@ -201,7 +211,6 @@ small span {
   margin-top: -91.666667%;
   margin-right: 50%;
   transform: rotate(2deg);
-  z-index: 1;
 }
 
 .project-grocery .figure:nth-child(1) {
@@ -217,7 +226,7 @@ small span {
   transform: rotate(3deg);
 }
 
-.dialog-right {
+.project-info {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -268,17 +277,9 @@ small span {
 
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  padding-bottom: 40px;
+  top: 20px;
+  left: 20px;
   z-index: 999;
-  background-image: linear-gradient(
-    to top,
-    rgba(249, 250, 251, 0),
-    rgba(249, 250, 251, 1) 33.333333%
-  );
 }
 
 @media screen and (min-width: 768px) {
@@ -286,25 +287,15 @@ small span {
     top: 50%;
     left: 32px;
     transform: translateY(-50%);
-    width: 40px;
-    padding: 0;
-    background-image: none;
   }
 }
 
 .nav-content {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   gap: 16px;
-  height: 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .nav-content {
-    flex-direction: column;
-    width: 40px;
-    height: auto;
-  }
+  width: 36px;
 }
 
 .avatar {
@@ -350,22 +341,6 @@ small span {
 .nav-item-email {
   color: var(--black);
   background-color: var(--email);
-}
-
-.copyright {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 999;
-  display: flex;
-}
-
-.just {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  display: flex;
 }
 
 .bar-bottom {
