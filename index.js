@@ -4,7 +4,7 @@ const slideNav = document.querySelector('.slide-nav');
 slideInElements.forEach((slideInElement, index) => {
   setTimeout(() => {
     slideInElement.classList.add('active');
-  }, index * 150);
+  }, index * 50);
 
   slideNav.classList.add('active');
 });
