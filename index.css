@@ -155,6 +155,14 @@ small span {
   color: var(--gray-400);
 }
 
+.projects-list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: -8px;
+}
+
 /* Project */
 
 .badge {
@@ -250,17 +258,16 @@ small span {
 
 .link {
   font-size: 18px;
-  gap: 8px;
   padding: 4px 8px;
   border-radius: 8px;
-  color: var(--black);
+  color: var(--purple);
   background-color: transparent;
-  transform: translateX(-8px);
   transition: all 200ms ease-in-out;
 }
 
 .link:hover {
   background-color: var(--gray-100);
+  transform: scale(1.05);
 }
 
 .link svg {
@@ -308,7 +315,6 @@ small span {
   color: var(--black);
   background-color: var(--white);
   border: 1px solid var(--gray-200);
-  will-change: transform;
   box-shadow: var(--btn-live-shadow);
   transition: all 200ms ease-in-out;
 }
@@ -324,15 +330,51 @@ small span {
   transform: rotate(0deg) scale(1.1);
 }
 
-/* .nav-item-github {
-  background-color: var(--github);
-}
-
-.nav-item-email {
-  background-color: var(--email);
-} */
-
 .copyright {
   font-size: 14px;
   color: var(--gray-400);
+}
+
+/* Animation */
+
+.slide-nav {
+  opacity: 0;
+}
+
+.slide-nav.active {
+  animation: slideNav 1s ease-in forwards;
+}
+
+@keyframes slideNav {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.slide-in {
+  opacity: 0;
+}
+
+.slide-in.active {
+  animation: slideIn 1s ease-in forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
