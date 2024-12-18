@@ -237,16 +237,13 @@ small span {
 }
 
 .project-grocery .figure:nth-child(1) {
-  margin-right: 50%;
-  transform: rotate(-3deg);
+  margin-right: 41.666667%;
   z-index: 1;
 }
 
 .project-grocery .figure:nth-child(2) {
-  margin-top: -91.666667%;
-  margin-right: 8.333333%;
+  margin-top: -110%;
   margin-left: 41.666667%;
-  transform: rotate(3deg);
 }
 
 .project-info {
