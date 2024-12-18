@@ -205,15 +205,12 @@ small span {
 }
 
 .project-dental .figure:nth-child(1) {
-  margin-right: 50%;
-  transform: rotate(-4deg);
-  z-index: 1;
+  margin-right: 41.666667%;
 }
 .project-dental .figure:nth-child(2) {
   margin-top: -91.666667%;
-  margin-right: 8.333333%;
   margin-left: 41.666667%;
-  transform: rotate(4deg);
+  z-index: -1;
 }
 
 .project-note {
@@ -282,7 +279,6 @@ small span {
 
 .link:hover {
   background-color: var(--gray-100);
-  transform: scale(1.05);
 }
 
 .project-link svg {
