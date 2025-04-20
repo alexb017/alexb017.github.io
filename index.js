@@ -1,116 +1,60 @@
-// const emailAddress = 'alexbacirea@gmail.com';
+// Shows the image on hover for links
+const links = document.querySelectorAll('a.link-with-image');
 
-// const copyEmailBtn = document.querySelector('.btn-email');
-// const popup = document.querySelector('.email-popup');
+links.forEach((link) => {
+  const image = link.querySelector('img');
 
-// copyEmailBtn.addEventListener('click', (event) => {
-//   navigator.clipboard.writeText(emailAddress);
+  if (image) {
+    // Ensure the image is initially hidden
+    image.style.display = 'none';
 
-//   // Remove fade-out class before showing the popup
-//   popup.classList.remove('fade-out');
-//   popup.classList.remove('hidden');
+    link.addEventListener('mouseenter', () => {
+      image.style.display = 'block';
+      image.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 200,
+        fill: 'forwards',
+        easing: 'ease-in',
+      });
+    });
 
-//   setTimeout(() => {
-//     popup.classList.add('fade-out');
+    link.addEventListener('mouseleave', () => {
+      const fadeOut = image.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 100,
+        fill: 'forwards',
+        easing: 'ease-out',
+      });
 
-//     // Wait for the animation to finish before hiding the popup
-//     popup.addEventListener(
-//       'animationend',
-//       () => {
-//         popup.classList.add('hidden');
-//       },
-//       { once: true }
-//     );
-//   }, 2000);
-// });
-
-// const slideElements = document.querySelectorAll('.slide-enter');
-
-// slideElements.forEach((element, index) => {
-//   setTimeout(() => {
-//     element.classList.add('slide-enter-active');
-//   }, index * 200);
-// });
-
-// const btnsOpen = document.querySelectorAll('.card');
-// const btnsClose = document.querySelectorAll('.btn-close');
-
-// btnsOpen.forEach((btn) => {
-//   btn.addEventListener('click', (event) => {
-//     if (event.currentTarget.classList.contains('card')) {
-//       const selector = event.currentTarget.dataset.dialog;
-//       const dialog = document.getElementById(selector);
-//       document.body.style.overflow = 'hidden';
-//       dialog.showModal();
-//     }
-//   });
-// });
-
-// btnsClose.forEach((btn) => {
-//   btn.addEventListener('click', (event) => {
-//     if (event.currentTarget.classList.contains('btn-close')) {
-//       const selector = event.currentTarget.dataset.close;
-//       const dialog = document.getElementById(selector);
-//       dialog.setAttribute('closing', '');
-//       dialog.addEventListener(
-//         'animationend',
-//         () => {
-//           dialog.removeAttribute('closing');
-//           document.body.style.overflow = 'auto';
-//           dialog.close();
-//         },
-//         { once: true }
-//       );
-//     }
-//   });
-// });
-
-// Carousel
-const sliderCarousel = document.querySelector('.carousel');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-function updateButtons() {
-  // Disable the prev button when the carousel is at the beginning
-  if (sliderCarousel.scrollLeft === 0) {
-    prev.disabled = true;
-  } else {
-    prev.disabled = false;
+      fadeOut.onfinish = () => {
+        image.style.display = 'none';
+      };
+    });
   }
+});
 
-  // Disable next button if the carousel is at the end
-  if (
-    sliderCarousel.scrollLeft + sliderCarousel.clientWidth >=
-    sliderCarousel.scrollWidth - 1
-  ) {
-    next.disabled = true;
-  } else {
-    next.disabled = false;
-  }
+// Copy email to clipboard
+const emailBtn = document.querySelector('.email-btn');
+const email = 'alexbacirea@gmail.com';
+emailBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(email);
+
+  const spanContent = emailBtn.querySelector('span');
+  spanContent.textContent = 'Copied';
+  setTimeout(() => {
+    spanContent.textContent = 'Copy email to clipboard';
+  }, 1000);
+});
+
+// Show local time
+const time = document.querySelector('.time');
+function updateTime() {
+  const date = new Date();
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  };
+  time.textContent = date.toLocaleTimeString('en-US', options);
 }
-
-// Move the carousel to the right
-function moveRight() {
-  sliderCarousel.scrollBy({
-    left: sliderCarousel.clientWidth / 4,
-    behavior: 'smooth',
-  });
-}
-
-// Move the carousel to the left
-function moveLeft() {
-  sliderCarousel.scrollBy({
-    left: -sliderCarousel.clientWidth / 4,
-    behavior: 'smooth',
-  });
-}
-
-// Initial button state
-updateButtons();
-
-// Add event listeners to the buttons
-next.addEventListener('click', moveRight);
-prev.addEventListener('click', moveLeft);
-
-// Add event listener to update the buttons when the carousel scrolls
-sliderCarousel.addEventListener('scroll', updateButtons);
+updateTime();
+setInterval(updateTime, 1000);
