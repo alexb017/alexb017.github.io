@@ -31,7 +31,7 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -45,6 +45,7 @@ button {
 
 b,
 strong {
+  font-weight: 600;
   font-weight: 600;
 }
 
@@ -185,6 +186,7 @@ img {
 
 .header {
   display: flex;
+  flex-direction: column;
   flex-direction: column;
   align-items: flex-start;
   gap: 80px;
