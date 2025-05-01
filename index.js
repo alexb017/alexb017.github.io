@@ -1,33 +1,14 @@
-// Shows the image on hover for links
-const links = document.querySelectorAll('a.link-with-image');
+// Shows the image on hover
+const items = document.querySelectorAll('a.item');
 
-links.forEach((link) => {
-  const image = link.querySelector('img');
+items.forEach((item) => {
+  const image = item.querySelector('img');
+  const showImage = () => item.classList.add('is-active');
+  const hideImage = () => item.classList.remove('is-active');
 
   if (image) {
-    // Ensure the image is initially hidden
-    image.style.display = 'none';
-
-    link.addEventListener('mouseenter', () => {
-      image.style.display = 'block';
-      image.animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 200,
-        fill: 'forwards',
-        easing: 'ease-in',
-      });
-    });
-
-    link.addEventListener('mouseleave', () => {
-      const fadeOut = image.animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: 100,
-        fill: 'forwards',
-        easing: 'ease-out',
-      });
-
-      fadeOut.onfinish = () => {
-        image.style.display = 'none';
-      };
-    });
+    item.addEventListener('mouseenter', showImage);
+    item.addEventListener('mouseleave', hideImage);
   }
 });
 
@@ -37,24 +18,34 @@ const email = 'alexbacirea@gmail.com';
 emailBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(email);
 
-  const spanContent = emailBtn.querySelector('span');
-  spanContent.textContent = 'Copied';
+  emailBtn.textContent = 'copied';
   setTimeout(() => {
-    spanContent.textContent = 'Copy email to clipboard';
+    emailBtn.textContent = 'copy email';
   }, 1000);
 });
 
 // Show local time
-const time = document.querySelector('.time');
+const localTime = document.querySelector('.time');
 function updateTime() {
   const date = new Date();
-  const options = {
-    hour: '2-digit',
+
+  const day = { weekday: 'short' };
+  const time = {
+    hour: 'numeric',
     minute: '2-digit',
     second: '2-digit',
     hour12: true,
   };
-  time.textContent = date.toLocaleTimeString('en-US', options);
+  const dayString = date.toLocaleDateString('en-US', day);
+  const timeString = date.toLocaleTimeString('en-US', time);
+  localTime.textContent = `${dayString} ${timeString}`;
 }
 updateTime();
 setInterval(updateTime, 1000);
+
+// Fade in animation on load
+const fadeInElements = document.querySelectorAll('.fade-in');
+fadeInElements.forEach((element, index) => {
+  element.style.animationDelay = `${index * 0.05}s`;
+  element.classList.add('animate-fade-in');
+});
