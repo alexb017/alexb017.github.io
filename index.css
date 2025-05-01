@@ -31,7 +31,7 @@ body {
 }
 
 a {
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
 }
 
@@ -45,7 +45,6 @@ button {
 
 b,
 strong {
-  font-weight: 600;
   font-weight: 600;
 }
 
