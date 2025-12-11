@@ -2,7 +2,7 @@
 
 :root {
   --white: #fff;
-  --black: #0f0f0f;
+  --black: #333;
   --gray: #999;
   --gray-light: #d3d3d3;
   --gray-lighter: #fafafa;
@@ -18,7 +18,7 @@ body {
   font-size: 16px;
   line-height: 1.4;
   color: var(--black);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.48px;
 }
 
@@ -84,11 +84,6 @@ i {
 
 ul {
   list-style: none;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 700;
 }
 
 small {
