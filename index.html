@@ -9,96 +9,135 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
-    <div class="main">
+    <main>
       <div class="content">
-        <div class="left">
-          <div class="top">
-            <div class="header">
-              <div class="title">
-                <p class="fade-in">hey,</p>
-                <p class="fade-in">i'm Alex</p>
-                <p class="fade-in">nice to</p>
-                <p class="fade-in">see you</p>
-                <p class="fade-in">here</p>
-              </div>
-              <div class="about">
-                <p class="fade-in">
-                  Programming, creating, chilling with music, and having a good
-                  cup of coffee &mdash; that pretty much sums me up.
-                </p>
-                <div class="social">
-                  <button class="btn email-btn fade-in">copy email</button>
-                  <a
-                    class="btn fade-in"
-                    href="https://github.com/alexb017"
-                    target="_blank"
-                    >github</a
-                  >
-                </div>
-              </div>
-            </div>
+        <div class="grid">
+          <div class="header">
+            <p class="fade-in">Hey, I'm Alex.</p>
+            <p class="fade-in"><span>Nice to see you here.</span></p>
+          </div>
+
+          <div class="about">
+            <p class="fade-in">A little bit about me</p>
+            <p class="fade-in">
+              I'm a fairly curious person. I enjoy writing code, making things,
+              and learning new awesome stuff.
+            </p>
+            <p class="fade-in">
+              I also love a good cup of coffee, and listening to music.
+            </p>
+
             <div class="projects">
-              <div class="items">
+              <p class="fade-in">
+                Stuff I've build so far that I'm pretty pleased with:
                 <a
-                  class="item fade-in"
+                  class="link item-link"
                   href="https://github.com/alexb017/book-store"
                   target="_blank"
-                  ><div>
-                    book store
-                    <small class="date">2025 - <span>Now</span></small>
-                  </div>
-                  <img class="img" src="./public/book.jpg" alt="book store"
-                /></a>
+                >
+                  <span>Book Store</span>
+                  <img class="image" src="./public/book.jpg" alt="book store" />
+                </a>
+                <small><span>(a fullstack book inventory)</span></small
+                >,
                 <a
-                  class="item fade-in"
+                  class="link item-link"
                   href="https://github.com/alexb017/retro-store-app"
                   target="_blank"
-                  ><div>e-commerce <small class="date">full-stack</small></div>
-                  <img class="img" src="./public/store.jpg" alt="store"
-                /></a>
+                >
+                  <span>E-commerce</span>
+                  <img
+                    class="image"
+                    src="./public/store.jpg"
+                    alt="e-commerce store"
+                  />
+                </a>
+                <small><span>(fullstack Next.js ecommerce app)</span></small
+                >,
                 <a
-                  class="item item-large fade-in"
+                  class="link item-link"
                   href="https://github.com/alexb017/note-taking-app"
                   target="_blank"
-                  ><div>note taking <small class="date">full-stack</small></div>
-                  <img class="img" src="./public/note.jpg" alt="note"
-                /></a>
+                >
+                  <span>Note Taking App</span>
+                  <img
+                    class="image image-big"
+                    src="./public/note.jpg"
+                    alt="note taking app"
+                  />
+                </a>
+                <small><span>(a basic Google Keep clone)</span></small
+                >,
                 <a
-                  class="item fade-in"
+                  class="link item-link"
                   href="https://github.com/alexb017/dental-clinic"
                   target="_blank"
-                  ><div>dental clinic <small class="date">static</small></div>
+                >
+                  <span>Dental Clinic</span>
                   <img
-                    class="img"
+                    class="image"
                     src="./public/dental.jpg"
                     alt="dental clinic"
-                /></a>
+                  />
+                </a>
+                <small><span>(frontend landing page with React)</span></small
+                >, and
                 <a
-                  class="item fade-in"
+                  class="link item-link"
                   href="https://github.com/alexb017/grocery-store"
                   target="_blank"
-                  ><div>grocery <small class="date">static</small></div>
+                >
+                  <span>Grocery</span>
                   <img
-                    class="img"
+                    class="image"
                     src="./public/grocery.jpg"
                     alt="grocery store"
-                /></a>
-              </div>
-              <p class="fade-in">stuff i made</p>
+                  />
+                </a>
+                <small><span>(a basic supermarket with React)</span></small
+                >.
+              </p>
             </div>
-          </div>
-          <div class="bottom">
-            <div class="footer">
-              <div class="copyright">
-                <p class="time fade-in"></p>
-                <p class="fade-in">Just my boring personal website.</p>
-                <p class="fade-in">Last updated May 12, 2025</p>
+
+            <p class="fade-in">It will be nice to hear from you.</p>
+            <div class="social">
+              <p class="fade-in">
+                Email me at
+                <a class="link" href="mailto:alexbacirea@gmail.com"
+                  >alexbacirea@gmail.com</a
+                >
+              </p>
+              <div class="fade-in">
+                <a
+                  class="btn-link"
+                  href="https://github.com/alexb017"
+                  target="_blank"
+                  >Github</a
+                >
               </div>
-              <p class="fade-in">✌️ Alex</p>
             </div>
+
+            <small class="fade-in"
+              ><span>
+                Thanks for stopping by and have a great day!
+              </span></small
+            >
           </div>
         </div>
       </div>
-    </div>
+      <footer class="footer">
+        <div>
+          <p class="fade-in">
+            <small><span>&copy; 2025 Alex.</span></small>
+          </p>
+          <p class="fade-in">
+            <small><span class="local-time"></span></small>
+          </p>
+        </div>
+        <p class="fade-in">
+          <small><span>Last updated December 8, 2025</span></small>
+        </p>
+      </footer>
+    </main>
   </body>
 </html>

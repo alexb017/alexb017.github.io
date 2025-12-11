@@ -1,31 +1,5 @@
-// Shows the image on hover
-const items = document.querySelectorAll('a.item');
-
-items.forEach((item) => {
-  const image = item.querySelector('img');
-  const showImage = () => item.classList.add('is-active');
-  const hideImage = () => item.classList.remove('is-active');
-
-  if (image) {
-    item.addEventListener('mouseenter', showImage);
-    item.addEventListener('mouseleave', hideImage);
-  }
-});
-
-// Copy email to clipboard
-const emailBtn = document.querySelector('.email-btn');
-const email = 'alexbacirea@gmail.com';
-emailBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText(email);
-
-  emailBtn.textContent = 'copied';
-  setTimeout(() => {
-    emailBtn.textContent = 'copy email';
-  }, 1000);
-});
-
 // Show local time
-const localTime = document.querySelector('.time');
+const localTime = document.querySelector('.local-time');
 function updateTime() {
   const date = new Date();
 
