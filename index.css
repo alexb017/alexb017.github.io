@@ -9,6 +9,7 @@
   --blue: #0075ff;
   --green: #40d83d;
   --orange: #ff7a00;
+  --lightning-yellow: #e6ff00;
   --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -37,6 +38,11 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+::selection {
+  background-color: var(--lightning-yellow);
+  color: var(--black);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -53,6 +59,27 @@ body {
 a {
   color: var(--black);
   text-decoration: none;
+}
+
+a:visited {
+  color: var(--black);
+}
+
+a:focus {
+  outline: 1px solid var(--orange);
+  outline-offset: 1px;
+}
+
+a.link {
+  border-bottom: 1px solid var(--gray-light);
+  transition: background-color 0.2s ease-out;
+}
+a.link:hover {
+  background-color: var(--lightning-yellow);
+}
+
+a:active {
+  color: var(--orange);
 }
 
 svg {
@@ -104,17 +131,6 @@ small {
   font-weight: 600;
 }
 
-.link {
-  position: relative;
-  display: inline-flex;
-  line-height: 1.1;
-  border-bottom: 1px solid var(--gray-light);
-  transition: border-color 0.2s ease-out;
-}
-.link:hover {
-  border-color: var(--black);
-}
-
 .item-link {
   position: relative;
 }
@@ -128,7 +144,7 @@ small {
   display: none;
   position: absolute;
   top: 0;
-  left: 100%;
+  left: 0;
   width: 300px;
   transform: scale(0.9) rotate(-1deg);
   box-shadow: var(--shadow);
@@ -171,6 +187,7 @@ small {
   padding: 48px;
   display: flex;
   flex-direction: column;
+  z-index: -1;
 }
 
 .last-updated {
