@@ -71,6 +71,8 @@ a:focus {
 }
 
 a.link {
+  font-weight: 600;
+  white-space: nowrap;
   border-bottom: 1px solid var(--gray-light);
   transition: background-color 0.2s ease-out;
 }
@@ -120,10 +122,10 @@ small {
 .about {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   width: 100%;
-  max-width: 550px;
-  padding: 48px;
+  max-width: 540px;
+  padding: 40px;
 }
 
 .about > p:first-child {
@@ -184,14 +186,10 @@ small {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 48px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   z-index: -1;
-}
-
-.last-updated {
-  margin-top: 8px;
 }
 
 @keyframes fadeIn {
