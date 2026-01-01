@@ -13,26 +13,31 @@ itemLinks.forEach((link) => {
 
 // Show local time
 const localTime = document.querySelector(".local-time");
-function updateTime() {
-  const date = new Date();
 
-  const day = { weekday: "short" };
-  const time = {
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  };
-  const dayString = date.toLocaleDateString("en-US", day);
-  const timeString = date.toLocaleTimeString("en-US", time);
-  localTime.textContent = `${dayString} ${timeString}`;
+// Create formatter for local time
+const formatter = new Intl.DateTimeFormat("en-US", {
+  weekday: "short",
+  hour: "numeric",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: true,
+});
+
+function updateTime() {
+  const now = new Date();
+
+  // Format and display local time without comma
+  localTime.textContent = formatter.format(now).replace(",", "");
+
+  // Update every second
+  const delay = 1000 - now.getMilliseconds();
+  setTimeout(updateTime, delay);
 }
 updateTime();
-setInterval(updateTime, 1000);
 
 // Fade in animation on load
 const fadeInElements = document.querySelectorAll(".fade-in");
 fadeInElements.forEach((element, index) => {
-  element.style.animationDelay = `${index * 0.05}s`;
+  element.style.animationDelay = `${index * 0.1}s`;
   element.classList.add("animate-fade-in");
 });

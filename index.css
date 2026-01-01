@@ -17,10 +17,14 @@
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-family: "Google Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1.4rem;
   line-height: 1.2em;
   color: var(--black);
   font-weight: 700;
@@ -81,8 +85,9 @@ a.link {
   transition: color 0.2s ease-out, background-color 0.4s ease-out;
 }
 a.link:hover {
-  color: var(--black);
-  background-color: var(--lightning-yellow);
+  color: var(--white);
+  background-color: var(--black);
+  border-bottom: none;
 }
 
 a:active {
@@ -112,8 +117,15 @@ ul {
   list-style: none;
 }
 
+h1 {
+  font-size: 4.8rem;
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
 small {
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.2em;
   letter-spacing: -0.03em;
 }
@@ -201,8 +213,8 @@ small {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
+    transform: translateY(10px);
+    filter: blur(1px);
   }
   100% {
     opacity: 1;
@@ -216,5 +228,5 @@ small {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
