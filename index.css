@@ -146,6 +146,23 @@ small {
   padding: 20px;
 }
 
+.box-text {
+  color: var(--lightgray);
+  padding: 4px 10px;
+  width: fit-content;
+  border-radius: 100px;
+  background-color: var(--black);
+  margin-bottom: 4px;
+}
+
+.intented {
+  text-indent: 32px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
 .item-link {
   position: relative;
 }
@@ -197,17 +214,11 @@ small {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: baseline;
+  column-gap: 20px;
   z-index: -1;
-}
-
-.last-updated {
-  color: var(--darkgray);
 }
 
 @keyframes fadeIn {
