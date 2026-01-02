@@ -29,6 +29,7 @@ body {
   color: var(--black);
   font-weight: 700;
   letter-spacing: -0.03em;
+  background-color: var(--whitesmoke);
 }
 
 * {
