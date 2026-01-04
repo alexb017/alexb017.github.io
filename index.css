@@ -12,9 +12,7 @@
   --green: #40d83d;
   --orange: #ff7a00;
   --lightning-yellow: #e6ff00;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  --shadow-heavy: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 html {
@@ -25,10 +23,9 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1.4rem;
   line-height: 1.2em;
-  color: var(--lightgray);
+  color: var(--black);
   font-weight: 700;
   letter-spacing: -0.03em;
-  background-color: var(--black);
 }
 
 * {
@@ -79,14 +76,15 @@ a:focus {
 }
 
 a.link {
+  display: inline-block;
   color: var(--gray);
   white-space: nowrap;
   border-bottom: 1px solid transparent;
   transition: color 0.1s ease-out, border 0.4s ease-out;
 }
 a.link:hover {
-  color: var(--white);
-  border-color: var(--white);
+  color: var(--black);
+  border-color: var(--black);
 }
 
 a:active {
@@ -145,7 +143,7 @@ small {
   align-items: flex-start;
   gap: 20px;
   width: 100%;
-  max-width: 720px;
+  max-width: 680px;
 }
 
 .intented {
@@ -168,7 +166,7 @@ small {
   left: 0;
   width: 300px;
   transform: scale(0.9) rotate(-1deg);
-  box-shadow: var(--shadow-heavy);
+  box-shadow: var(--shadow);
   border-radius: 16px;
   opacity: 0;
   visibility: hidden;
