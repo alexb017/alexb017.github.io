@@ -33,7 +33,7 @@ function updateTime() {
   const delay = 1000 - now.getMilliseconds();
   setTimeout(updateTime, delay);
 }
-updateTime();
+// updateTime();
 
 // Fade in animation on load
 const fadeInElements = document.querySelectorAll(".fade-in");
