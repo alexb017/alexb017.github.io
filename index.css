@@ -20,10 +20,9 @@ body {
   font-family: "Geist", sans-serif;
   font-size: 1.6rem;
   line-height: 1.2em;
-  color: var(--white);
-  font-weight: 400;
+  color: var(--black);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  background-color: var(--black);
 }
 
 * {
@@ -60,12 +59,12 @@ body {
 }
 
 a {
-  color: var(--white);
+  color: var(--gray);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--white);
+  color: var(--gray);
 }
 
 a:focus {
@@ -75,14 +74,11 @@ a:focus {
 
 a.link {
   display: inline-block;
-  color: var(--white);
   white-space: nowrap;
-  text-decoration: underline;
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--yellowgreen);
-  text-decoration: none;
+  color: var(--black);
 }
 
 a:active {
@@ -112,18 +108,6 @@ ul {
   list-style: none;
 }
 
-h1 {
-  font-size: 2.1rem;
-  line-height: 1.2em;
-  letter-spacing: -0.05em;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-}
-
 small {
   font-size: 1rem;
   line-height: 1.2em;
@@ -133,8 +117,8 @@ small {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   min-height: 100vh;
   padding: 20px;
@@ -144,14 +128,18 @@ small {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
-  max-width: 720px;
+  max-width: 600px;
 }
 
 .projects {
   position: relative;
-  z-index: 5;
+  z-index: 10;
+}
+
+.mdash {
+  color: var(--lightgray);
 }
 
 .item-link {
@@ -170,8 +158,11 @@ small {
   opacity: 0;
   visibility: hidden;
   filter: blur(10px);
-  transition: opacity 0.3s ease-out, visibility 0s linear 0.1s,
-    filter 0.4s ease-out, transform 0.2s ease-out;
+  transition:
+    opacity 0.3s ease-out,
+    visibility 0s linear 0.1s,
+    filter 0.4s ease-out,
+    transform 0.2s ease-out;
   z-index: 10;
   pointer-events: none;
   will-change: transform;
@@ -190,15 +181,8 @@ small {
 }
 
 .footer {
-  color: var(--gray);
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-  }
+  color: var(--lightgray);
+  margin-top: 20px;
 }
 
 @keyframes fadeIn {
