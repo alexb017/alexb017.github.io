@@ -10,6 +10,8 @@
   --whitesmoke: #f5f5f5;
   --red: #ff0000;
   --darkred: #8b0000;
+  --lightcoral: #f08080;
+  --mist: #cacfcb;
   --shadow:
     0px 9px 21px rgba(0, 0, 0, 0.1), 0px 38px 38px rgba(0, 0, 0, 0.09),
     0px 85px 51px rgba(0, 0, 0, 0.05);
@@ -21,12 +23,12 @@ html {
 
 body {
   font-family: "Geist", sans-serif;
-  font-size: 2.8rem;
-  line-height: 1.1em;
-  color: var(--lightgray);
-  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2em;
+  color: var(--black);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  background-color: var(--black);
+  background-color: var(--whitesmoke);
 }
 
 * {
@@ -63,12 +65,12 @@ body {
 }
 
 a {
-  color: var(--lightgray);
+  color: var(--black);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--lightgray);
+  color: var(--black);
 }
 
 a:focus {
@@ -78,10 +80,18 @@ a:focus {
 
 a.link {
   display: inline-block;
-  transition: color 0.2s ease-out;
+  border-bottom: 1px solid var(--darkgray);
+  transition:
+    color 0.2s ease-out,
+    border-color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--lightgray);
+  color: var(--red);
+  border-color: transparent;
+}
+
+a.item-link {
+  color: var(--red);
 }
 
 a:active {
@@ -107,8 +117,9 @@ img {
   height: auto;
 }
 
-p > span {
-  color: var(--dimgray);
+p > span,
+p > small {
+  color: var(--lightgray);
 }
 
 ul {
@@ -119,10 +130,6 @@ small {
   font-size: 1.4rem;
   line-height: 1.2em;
   letter-spacing: -0.03em;
-}
-
-small span {
-  color: var(--dimgray);
 }
 
 .content {
@@ -138,33 +145,52 @@ small span {
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  width: 100%;
+  align-items: start;
   gap: 32px;
+  width: 100%;
 }
 
-.projects {
-  grid-column: span 3;
+.information {
+  grid-column: 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 }
 
-.projects-list > p {
-  color: var(--darkred);
-}
-
-.projects-list ul li p a {
-  color: var(--red);
-}
-
-.info {
-  grid-column: 4 / span 4;
+.projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
-  width: 100%;
+  gap: 8px;
+}
+
+.projects-list {
+  position: relative;
+  z-index: 10;
+}
+
+.projects > p {
+  color: var(--lightcoral);
+}
+
+.projects-list {
+  color: var(--red);
+}
+
+.projects p:last-child {
+  color: var(--red);
+}
+
+a.github-link {
+  color: var(--red);
 }
 
 .end {
@@ -210,32 +236,6 @@ small span {
   transform: scale(1) rotate(-1deg);
 }
 
-.contact {
-  grid-column: span 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.email {
-  grid-column: 3 / span 2;
-}
-
-.connect {
-  grid-column: 5 / span 1;
-}
-
-.footer {
-  grid-column: 11 / span 2;
-  display: flex;
-  justify-content: end;
-}
-
-.bottom {
-  align-items: end;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -255,4 +255,5 @@ small span {
 
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
+  will-change: transform, opacity, filter;
 }
