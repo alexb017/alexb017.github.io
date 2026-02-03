@@ -1,6 +1,16 @@
 // Image follow cursor on hover
 const itemLinks = document.querySelectorAll(".item-link");
 itemLinks.forEach((link) => {
+  const project = link.closest(".project");
+
+  link.addEventListener("mouseenter", () => {
+    project.classList.add("active");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    project.classList.remove("active");
+  });
+
   const img = link.querySelector("img");
   link.addEventListener("mousemove", (e) => {
     const rect = link.getBoundingClientRect();
@@ -33,7 +43,7 @@ function updateTime() {
   const delay = 1000 - now.getMilliseconds();
   setTimeout(updateTime, delay);
 }
-// updateTime();
+updateTime();
 
 // Fade in animation on load
 const fadeInElements = document.querySelectorAll(".fade-in");

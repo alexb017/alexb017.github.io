@@ -23,12 +23,12 @@ html {
 
 body {
   font-family: "Geist", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.2em;
-  color: var(--black);
+  color: var(--whitesmoke);
   font-weight: 700;
   letter-spacing: -0.03em;
-  background-color: var(--whitesmoke);
+  background-color: var(--darkgray);
 }
 
 * {
@@ -65,12 +65,12 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--whitesmoke);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--black);
+  color: var(--whitesmoke);
 }
 
 a:focus {
@@ -80,19 +80,15 @@ a:focus {
 
 a.link {
   display: inline-block;
-  border-bottom: 1px solid var(--darkgray);
-  transition:
-    color 0.2s ease-out,
-    border-color 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--red);
-  border-color: transparent;
+  color: var(--darkred);
 }
 
-a.item-link {
+/* a.item-link {
   color: var(--red);
-}
+} */
 
 a:active {
   color: var(--darkred);
@@ -117,17 +113,12 @@ img {
   height: auto;
 }
 
-p > span,
-p > small {
-  color: var(--lightgray);
-}
-
 ul {
   list-style: none;
 }
 
 small {
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.2em;
   letter-spacing: -0.03em;
 }
@@ -139,63 +130,28 @@ small {
   align-items: flex-start;
   width: 100%;
   min-height: 100vh;
-  padding: 32px;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: start;
-  gap: 32px;
-  width: 100%;
+  padding: 20px;
 }
 
 .information {
-  grid-column: 4 / span 4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 48px;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 20px;
 }
 
-.projects {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.projects-list {
+.project.active {
   position: relative;
   z-index: 10;
-}
-
-.projects > p {
-  color: var(--lightcoral);
-}
-
-.projects-list {
-  color: var(--red);
-}
-
-.projects p:last-child {
-  color: var(--red);
-}
-
-a.github-link {
-  color: var(--red);
-}
-
-.end {
-  grid-column: 11 / span 2;
-  justify-self: end;
 }
 
 .item-link {
@@ -234,6 +190,21 @@ a.github-link {
   visibility: visible;
   filter: blur(0);
   transform: scale(1) rotate(-1deg);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.grid-center {
+  text-align: center;
+}
+
+.grid-end {
+  text-align: right;
 }
 
 @keyframes fadeIn {
