@@ -25,10 +25,10 @@ body {
   font-family: "Geist", sans-serif;
   font-size: 2rem;
   line-height: 1.2em;
-  color: var(--whitesmoke);
-  font-weight: 700;
+  color: var(--dimgray);
+  font-weight: 600;
   letter-spacing: -0.03em;
-  background-color: var(--darkgray);
+  background-color: var(--white);
 }
 
 * {
@@ -65,12 +65,12 @@ body {
 }
 
 a {
-  color: var(--whitesmoke);
+  color: var(--black);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--whitesmoke);
+  color: var(--black);
 }
 
 a:focus {
@@ -80,14 +80,17 @@ a:focus {
 
 a.link {
   display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: var(--lightcoral);
+  text-decoration-thickness: 1px;
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--darkred);
+  color: var(--dimgray);
 }
 
-/* a.item-link {
-  color: var(--red);
+/* a.link-social {
+  color: var(--gray);
 } */
 
 a:active {
@@ -192,19 +195,28 @@ small {
   transform: scale(1) rotate(-1deg);
 }
 
+.wide-image {
+  width: 200px;
+}
+
 .footer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   align-items: center;
   width: 100%;
 }
+@media screen and (min-width: 1200px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.grid-center {
-  text-align: center;
-}
+  .grid-center {
+    text-align: center;
+  }
 
-.grid-end {
-  text-align: right;
+  .grid-end {
+    text-align: right;
+  }
 }
 
 @keyframes fadeIn {
