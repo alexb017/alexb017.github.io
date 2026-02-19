@@ -25,10 +25,10 @@ body {
   font-family: "Geist", sans-serif;
   font-size: 2rem;
   line-height: 1.2em;
-  color: var(--dimgray);
+  color: var(--lightgray);
   font-weight: 600;
   letter-spacing: -0.03em;
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 * {
@@ -65,12 +65,12 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--black);
+  color: var(--white);
 }
 
 a:focus {
@@ -80,18 +80,18 @@ a:focus {
 
 a.link {
   display: inline-block;
-  text-decoration: underline;
-  text-decoration-color: var(--lightcoral);
-  text-decoration-thickness: 1px;
+  padding: 0 4px;
+  cursor: alias;
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--dimgray);
+  color: var(--black);
+  background-color: var(--white);
 }
 
-/* a.link-social {
-  color: var(--gray);
-} */
+a.link-email {
+  cursor: pointer;
+}
 
 a:active {
   color: var(--darkred);
@@ -126,6 +126,10 @@ small {
   letter-spacing: -0.03em;
 }
 
+.year {
+  color: var(--dimgray);
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -152,9 +156,26 @@ small {
   gap: 20px;
 }
 
+.projects ul {
+  padding-left: 16px;
+}
+
+.projects ul li::before {
+  content: "\279C";
+  font-size: 1rem;
+  margin-right: 8px;
+  color: var(--dimgray);
+}
+
+.project {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
 .project.active {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 .item-link {
@@ -166,18 +187,17 @@ small {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
-  transform: scale(0.9) rotate(-1deg);
+  width: 240px;
+  transform: scale(0.6);
   box-shadow: var(--shadow);
   border-radius: 16px;
-  opacity: 0;
   visibility: hidden;
-  filter: blur(10px);
+  filter: blur(16px);
   transition:
     opacity 0.3s ease-out,
     visibility 0s linear 0.1s,
-    filter 0.4s ease-out,
-    transform 0.2s ease-out;
+    filter 0.1s ease-out,
+    transform 0.3s ease-out;
   z-index: 10;
   pointer-events: none;
   will-change: transform;
@@ -192,11 +212,7 @@ small {
   opacity: 1;
   visibility: visible;
   filter: blur(0);
-  transform: scale(1) rotate(-1deg);
-}
-
-.wide-image {
-  width: 200px;
+  transform: scale(1);
 }
 
 .footer {
@@ -218,6 +234,10 @@ small {
     text-align: right;
   }
 }
+
+/* .footer p {
+  color: var(--dimgray);
+} */
 
 @keyframes fadeIn {
   0% {

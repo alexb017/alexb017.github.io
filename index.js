@@ -16,8 +16,8 @@ itemLinks.forEach((link) => {
     const rect = link.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    img.style.left = `${x + 20}px`;
-    img.style.top = `${y}px`;
+    img.style.left = `${x - 20}px`;
+    img.style.top = `${y - img.offsetHeight - 20}px`;
   });
 });
 
