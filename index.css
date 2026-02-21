@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
   --white: #fff;
-  --black: #0f0f0f;
+  --black: #000;
   --dimgray: #696969;
   --gray: #808080;
   --darkgray: #a9a9a9;
@@ -22,12 +22,11 @@ html {
 }
 
 body {
-  font-family: "Geist", sans-serif;
-  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
   line-height: 1.2em;
   color: var(--lightgray);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
   background-color: var(--black);
 }
 
@@ -80,13 +79,12 @@ a:focus {
 
 a.link {
   display: inline-block;
-  padding: 0 4px;
+  text-decoration: underline;
   cursor: alias;
+  text-indent: 0;
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--black);
-  background-color: var(--white);
 }
 
 a.link-email {
@@ -120,23 +118,36 @@ ul {
   list-style: none;
 }
 
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+
 small {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.2em;
   letter-spacing: -0.03em;
 }
 
+p > span {
+  color: var(--gray);
+}
+
+.indent {
+  text-indent: 1em;
+}
+
 .year {
-  color: var(--dimgray);
+  color: var(--lightgray);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
   width: 100%;
-  min-height: 100vh;
   padding: 20px;
 }
 
@@ -146,7 +157,7 @@ small {
   align-items: flex-start;
   gap: 20px;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .info {
@@ -164,7 +175,7 @@ small {
   content: "\279C";
   font-size: 1rem;
   margin-right: 8px;
-  color: var(--dimgray);
+  color: var(--lightgray);
 }
 
 .project {
@@ -221,7 +232,7 @@ small {
   align-items: center;
   width: 100%;
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   .footer {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -233,7 +244,7 @@ small {
   .grid-end {
     text-align: right;
   }
-}
+} */
 
 /* .footer p {
   color: var(--dimgray);
