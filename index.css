@@ -23,10 +23,11 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   line-height: 1.2em;
-  color: var(--lightgray);
-  font-weight: 700;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   background-color: var(--black);
 }
 
@@ -79,12 +80,14 @@ a:focus {
 
 a.link {
   display: inline-block;
-  text-decoration: underline;
   cursor: alias;
-  text-indent: 0;
-  transition: color 0.2s ease-out;
+  transition:
+    color 0.2s ease-out,
+    background-color 0.1s ease-out;
 }
 a.link:hover {
+  color: var(--black);
+  background-color: var(--lightcoral);
 }
 
 a.link-email {
@@ -118,12 +121,6 @@ ul {
   list-style: none;
 }
 
-h1 {
-  font-size: 2.8rem;
-  line-height: 1.2em;
-  font-weight: 700;
-}
-
 small {
   font-size: 1.2rem;
   line-height: 1.2em;
@@ -134,59 +131,40 @@ p > span {
   color: var(--gray);
 }
 
-.indent {
-  text-indent: 1em;
-}
-
-.year {
-  color: var(--lightgray);
-}
-
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 16px;
   width: 100%;
-  padding: 20px;
+  height: 100vh;
+  padding: 56px 40px;
 }
 
 .information {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  max-width: 700px;
+  max-width: 540px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
 }
 
-.projects ul {
-  padding-left: 16px;
-}
-
-.projects ul li::before {
-  content: "\279C";
-  font-size: 1rem;
-  margin-right: 8px;
-  color: var(--lightgray);
-}
-
-.project {
-  display: flex;
-  position: relative;
-  z-index: 1;
-}
-
-.project.active {
+.projects {
   position: relative;
   z-index: 5;
+}
+
+.projects p {
+  color: var(--darkgray);
 }
 
 .item-link {
@@ -225,30 +203,6 @@ p > span {
   filter: blur(0);
   transform: scale(1);
 }
-
-.footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  width: 100%;
-}
-/* @media screen and (min-width: 1200px) {
-  .footer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .grid-center {
-    text-align: center;
-  }
-
-  .grid-end {
-    text-align: right;
-  }
-} */
-
-/* .footer p {
-  color: var(--dimgray);
-} */
 
 @keyframes fadeIn {
   0% {
