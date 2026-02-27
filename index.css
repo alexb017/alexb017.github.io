@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 :root {
   --white: #fff;
@@ -25,10 +25,10 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 2.4rem;
   line-height: 1.2em;
-  color: var(--lightgray);
+  color: var(--white);
   font-weight: 500;
   letter-spacing: -0.03em;
   background-color: var(--black);
@@ -83,14 +83,11 @@ a:focus {
 
 a.link {
   display: inline-block;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  color: var(--mediumseagreen);
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--seagreen);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 a:active {
@@ -141,7 +138,7 @@ p > span {
 }
 
 .row {
-  min-height: 0.825em;
+  min-height: 1.2em;
 }
 
 .item-link {
