@@ -36,6 +36,8 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 function updateTime() {
   const now = new Date();
 
+  if (!localTime) return;
+
   // Format and display local time without comma
   localTime.textContent = formatter.format(now).replace(",", "");
 
