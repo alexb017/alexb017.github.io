@@ -6,8 +6,8 @@
   --gray: #737373;
   --lightgray: #d4d4d4;
   --darkgray: #424242;
-  --moss: #669f2a;
-  --darkmoss: #3f611a;
+  --green: #12b76a;
+  --darkgreen: #027a48;
   --shadow:
     0px 9px 21px rgba(0, 0, 0, 0.1), 0px 38px 38px rgba(0, 0, 0, 0.09),
     0px 85px 51px rgba(0, 0, 0, 0.05);
@@ -19,11 +19,11 @@ html {
 
 body {
   font-family: "Geist", sans-serif;
-  font-size: 2.4rem;
-  line-height: 1.2em;
+  font-size: 1.8rem;
+  line-height: 1.4em;
   color: var(--lightgray);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   background-color: var(--black);
 }
 
@@ -70,24 +70,24 @@ a:visited {
 }
 
 a:focus {
-  outline: 1px solid var(--moss);
+  outline: 1px solid var(--green);
   outline-offset: 1px;
 }
 
 a.link {
   display: inline-block;
   text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 1.5px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   cursor: alias;
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--moss);
+  color: var(--green);
 }
 
 a.item-link {
-  color: var(--moss);
+  color: var(--green);
 }
 
 a.link-email {
@@ -95,7 +95,7 @@ a.link-email {
 }
 
 a:active {
-  color: var(--darkmoss);
+  color: var(--darkgreen);
 }
 
 svg {
@@ -119,12 +119,6 @@ img {
 
 ul {
   list-style: none;
-}
-
-small {
-  font-size: 1.2rem;
-  line-height: 1.2em;
-  letter-spacing: -0.03em;
 }
 
 p > span {
@@ -153,7 +147,7 @@ p > span {
   align-items: flex-start;
   gap: 40px;
   width: 100%;
-  max-width: 760px;
+  max-width: 800px;
 }
 
 .info {
@@ -173,11 +167,11 @@ p > span {
 }
 
 .projects p:first-child {
-  color: var(--darkmoss);
+  color: var(--darkgreen);
 }
 
-.projects p:last-child {
-  color: var(--moss);
+.projects p {
+  color: var(--green);
 }
 
 .item-link {
