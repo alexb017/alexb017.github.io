@@ -3,26 +3,27 @@
 :root {
   --white: #fff;
   --black: #0f0f0f;
+  --background: #dedede;
   --gray: #737373;
   --lightgray: #d4d4d4;
   --darkgray: #424242;
-  --green: #12b76a;
-  --darkgreen: #027a48;
+  --green: #669f2a;
+  --darkgreen: #3f611a;
   --shadow:
     0px 9px 21px rgba(0, 0, 0, 0.1), 0px 38px 38px rgba(0, 0, 0, 0.09),
     0px 85px 51px rgba(0, 0, 0, 0.05);
 }
 
-html {
+/* html {
   font-size: 62.5%;
-}
+} */
 
 body {
   font-family: "Ubuntu", sans-serif;
-  font-size: 1.8rem;
-  line-height: 1.4em;
+  font-size: 1.2rem;
+  line-height: 1.2em;
   color: var(--lightgray);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.02em;
   background-color: var(--black);
 }
@@ -83,7 +84,7 @@ a.link {
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--green);
+  color: var(--white);
 }
 
 a.item-link {
