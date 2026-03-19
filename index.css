@@ -18,10 +18,9 @@
 body {
   font-family: system-ui;
   font-size: 1.5rem;
-  line-height: 1.2em;
+  line-height: 1.3em;
   color: var(--black);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 500;
   background-color: var(--background);
 }
 
@@ -114,7 +113,6 @@ ul {
 small {
   font-size: 0.875rem;
   line-height: 1.2em;
-  letter-spacing: -0.02em;
 }
 
 .content {
@@ -132,27 +130,30 @@ small {
   align-items: flex-start;
   gap: 40px;
   width: 100%;
+  max-width: 740px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 16px;
 }
 
 .projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 16px;
 }
 
 .projects-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: 10px;
+  list-style-type: decimal;
+  padding-left: 28px;
 }
 
 .item-link {
