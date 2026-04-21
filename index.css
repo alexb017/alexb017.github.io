@@ -75,7 +75,12 @@ a.link {
   transition: color 0.2s ease-out;
 }
 a.link:hover {
-  color: var(--gray);
+  color: var(--blue);
+}
+
+a.link-email {
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
 }
 
 a:active {
@@ -146,9 +151,9 @@ ul {
   box-shadow: var(--shadow);
   border-radius: 16px;
   visibility: hidden;
-  filter: blur(10px);
+  filter: blur(5px);
   transition:
-    visibility 0s linear 0.05s,
+    visibility 0s linear 0s,
     filter 0.1s ease-out;
   z-index: 10;
   pointer-events: none;
@@ -163,6 +168,9 @@ ul {
 .link:hover .image {
   visibility: visible;
   filter: blur(0);
+  transition:
+    visibility 0s linear 0s,
+    filter 0.2s ease-out;
 }
 
 .contact {
