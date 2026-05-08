@@ -1,13 +1,23 @@
 // Image follow cursor on hover
 const itemLinks = document.querySelectorAll(".item-link");
 itemLinks.forEach((link) => {
+  // const project = link.closest(".project");
+
+  // link.addEventListener("mouseenter", () => {
+  //   project.classList.add("active");
+  // });
+
+  // link.addEventListener("mouseleave", () => {
+  //   project.classList.remove("active");
+  // });
+
   const img = link.querySelector("img");
   link.addEventListener("mousemove", (e) => {
     const rect = link.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    img.style.left = `${x + 20}px`;
-    img.style.top = `${y}px`;
+    img.style.left = `${x - 20}px`;
+    img.style.top = `${y - img.offsetHeight - 20}px`;
   });
 });
 
@@ -25,6 +35,8 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 
 function updateTime() {
   const now = new Date();
+
+  if (!localTime) return;
 
   // Format and display local time without comma
   localTime.textContent = formatter.format(now).replace(",", "");
